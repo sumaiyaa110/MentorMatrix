@@ -1,0 +1,70 @@
+/* MentorProfile.css */
+.mentor-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #F0F8FF;
+  padding: 2rem;
+}
+
+.mentor-profile {
+  background-color: #080826;
+  border: none;
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  color: #F0F8FF;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-profile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mentor-profile img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1.5rem;
+  border: 3px solid #F0F8FF;
+}
+
+.mentor-profile h2 {
+  font-size: 2.5rem;
+  color: #F0F8FF;
+  margin-bottom: 1rem;
+}
+
+.mentor-profile p {
+  font-size: 1.2rem;
+  color: #F0F8FF;
+  margin-bottom: 1rem;
+}
+
+.mentor-profile a {
+  color: #F0F8FF;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.mentor-profile a:hover {
+  color: #080826;
+  background-color: #F0F8FF;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.mentor-profile .icon-container {
+  margin-top: 1.5rem;
+}
+
+.mentor-profile .icon-container a {
+  display: inline-block;
+  margin: 0 15px;
+}

@@ -1,0 +1,342 @@
+/* General Styling */
+.case-studies-container {
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #eef2f3, #ffffff);
+  font-family: 'Roboto', Arial, sans-serif;
+  text-align: center;
+}
+
+.section-header {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+}
+
+/* Controls (Search, Filters, Sort) */
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.category-filter,
+.sort-filter {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-filter:hover,
+.sort-filter:hover {
+  background-color: #f9f9f9;
+}
+
+/* Pagination */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-btn:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+.pagination-btn.active {
+  background-color: #1976d2;
+}
+
+/* Case Studies Grid */
+.case-studies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.case-study {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.case-study:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.case-study-symbol {
+  margin-bottom: 15px;
+}
+
+.symbol {
+  font-size: 3.5rem;
+  color: #4caf50;
+}
+
+/* Case Study Content */
+.case-study-content h3 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.case-study-content p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Tags */
+.tags {
+  margin: 10px 0;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #eaedea;
+  color: #2c3e50;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* More Info Button */
+.more-info-btn {
+  background-color: #d812e2;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.more-info-btn:hover {
+  background-color: #a6d0f3;
+  transform: translateY(-2px);
+}
+
+/* More Info Section */
+.more-info {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-left: 3px solid #4caf50;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Demo Link */
+.demo-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.demo-link:hover {
+  text-decoration: underline;
+  color: #0d47a1;
+}
+
+/* Sharing Buttons */
+.sharing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.sharing-buttons a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sharing-buttons .facebook {
+  background-color: #3b5998;
+}
+
+.sharing-buttons .facebook:hover {
+  background-color: #2d4373;
+}
+
+.sharing-buttons .twitter {
+  background-color: #1da1f2;
+}
+
+.sharing-buttons .twitter:hover {
+  background-color: #0c85d0;
+}
+
+.sharing-buttons .linkedin {
+  background-color: #0077b5;
+}
+
+.sharing-buttons .linkedin:hover {
+  background-color: #005983;
+}
+
+/* Favorite Button */
+.favorite-btn {
+  background-color: transparent;
+  color: #f39c12;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: color 0.3s;
+}
+
+.favorite-btn:hover {
+  color: #e67e22;
+}
+
+.case-study.favorite {
+  border: 2px solid #f39c12;
+}
+
+/* User Ratings */
+.rating {
+  margin-top: 10px;
+}
+
+.rating span {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #ccc;
+}
+
+.rating span:hover,
+.rating span:hover ~ span {
+  color: #f39c12;
+}
+
+.rating span.filled {
+  color: #f39c12;
+}
+
+/* Download Button */
+.download-btn {
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.download-btn:hover {
+  background-color: #1976d2;
+  transform: scale(1.05);
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: linear-gradient(to bottom, #2c3e50, #34495e);
+  color: #ecf0f1;
+}
+
+.dark-mode .case-study {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+.dark-mode .symbol {
+  color: #1abc9c;
+}
+
+.dark-mode .tag {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+
+.dark-mode .more-info-btn {
+  background-color: #16a085;
+  color: #ffffff;
+}
+
+.dark-mode .favorite-btn {
+  color: #e67e22;
+}
+
+.dark-mode .search-bar,
+.dark-mode .category-filter,
+.dark-mode .sort-filter {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  border-color: #1abc9c;
+}
+
+.dark-mode .search-bar:focus,
+.dark-mode .category-filter:hover,
+.dark-mode .sort-filter:hover {
+  background-color: #34495e;
+  border-color: #16a085;
+}
+
+.dark-mode .pagination-btn {
+  background-color: #34495e;
+  color: #ecf0f1;
+  border-color: #1abc9c;
+}
+
+.dark-mode .pagination-btn:hover {
+  background-color: #1abc9c;
+}
+

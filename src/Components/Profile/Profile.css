@@ -1,0 +1,36 @@
+/* Profile.css */
+.profile-container {
+    width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.profile-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.profile-details {
+    line-height: 1.6;
+}
+
+.profile-details p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.profile-details strong {
+    color: #222;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+}

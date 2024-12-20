@@ -1,0 +1,44 @@
+.user-feedback {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .user-feedback h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .user-feedback ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-feedback li {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-feedback p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .action-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-btn:hover {
+    background-color: #e67e22;
+  }
+  

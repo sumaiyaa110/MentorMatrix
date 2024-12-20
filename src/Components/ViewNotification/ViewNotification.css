@@ -1,0 +1,86 @@
+/* ViewNotification.css */
+.view-notification {
+    background-color: #f8f9fc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .view-notification h3 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    color: #3498db;
+    margin-right: 10px;
+  }
+  
+  .notification-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .notification-item {
+    background-color: #cccfd3;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .unread {
+    border-left: 4px solid #e74c3c;
+  }
+  
+  .read {
+    border-left: 4px solid #2ecc71;
+  }
+  
+  .notification-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #34495e;
+  }
+  
+  .notification-actions {
+    margin-top: 10px;
+  }
+  
+  .mark-read-btn,
+  .clear-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .mark-read-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .clear-btn {
+    background-color: #e74c3c;
+  }
+  
+  .clear-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .no-notifications {
+    text-align: center;
+    color: #7f8c8d;
+    margin-top: 20px;
+  }
+  

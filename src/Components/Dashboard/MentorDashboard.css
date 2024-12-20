@@ -1,0 +1,167 @@
+/* General Styles for Mentor Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    color: #333;
+}
+
+.dashboard-header {
+    background-color: #07143F;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+.dashboard-content {
+    flex: 1;
+    display: flex;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    flex: 0 0 250px;
+    background-color: #4e5b6e;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #f4f4f4;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.sidebar ul li:hover {
+    background-color: #07143F;
+    transform: scale(1.05);
+}
+
+/* Main Section Styles */
+.main-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #07143F;
+}
+
+/* Analytics Section */
+.analytics-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analytics-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.analytics-section canvas {
+    max-height: 250px;
+    max-width: 100%;
+}
+
+/* Footer */
+.dashboard-footer {
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #07143F;
+    color: #fff;
+    text-align: center;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #07143F; /* Dark background */
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.topbar-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-message {
+    flex: 2;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff !important; /* Ensure white text */
+}
+
+.date-time {
+    font-size: 14px;
+    color: #ddd; /* Light gray */
+    margin-left: 10px;
+}
+
+.topbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout-button {
+    background-color: #4e5b6e;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #07143F;
+}

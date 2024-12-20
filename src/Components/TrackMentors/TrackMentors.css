@@ -1,0 +1,119 @@
+.track-mentors {
+  background: linear-gradient(135deg, #f3f4f6, #dff6f0);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.track-mentors h3 {
+  text-align: center;
+  font-size: 28px;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.track-mentors ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.track-mentors li {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.track-mentors li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.track-mentors li .symbol {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #2ecc71;
+  text-align: center;
+}
+
+.track-mentors li p {
+  margin: 5px 0;
+  color: #34495e;
+  font-size: 16px;
+}
+
+.track-mentors li p span {
+  font-weight: bold;
+  color: #2980b9;
+}
+
+.action-btn {
+  display: block;
+  background: linear-gradient(135deg, #6dd5ed, #2193b0);
+  color: white;
+  text-align: center;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+  background: linear-gradient(135deg, #2193b0, #6dd5ed);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 300px;
+  padding: 10px 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.status-filter {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.status-filter:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-bar,
+  .status-filter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .track-mentors ul {
+    grid-template-columns: 1fr;
+  }
+}

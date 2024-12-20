@@ -1,0 +1,116 @@
+.assign-projects-container {
+  padding: 20px;
+  background-color: #C2E5EB; /* Original theme color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #4a90e2;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.assign-project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 1rem;
+  color: #555;
+}
+
+input,
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+button.assign-project-btn {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.assign-project-btn:hover {
+  background-color: #3578e5;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Input and select hover and focus effects */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 4px rgba(74, 144, 226, 0.3);
+}
+
+.assigned-projects {
+  margin-top: 30px;
+}
+
+.assigned-projects h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.projects-table th,
+.projects-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.projects-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #555;
+}
+
+.projects-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.projects-table tr:hover {
+  background-color: #e9f5f9;
+}
+
+.projects-table td {
+  font-size: 0.9rem;
+}

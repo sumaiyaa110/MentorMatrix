@@ -1,0 +1,67 @@
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #E6E6FA; /* Updated background color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  text-align: center;
+  color: #080826; /* Updated header color */
+}
+
+.password-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-form input, .login-form select, .login-form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-form button {
+  background-color:  #022c53; /* Keep button color, can be changed if desired */
+  color: white;
+  cursor: pointer;
+}
+
+.login-form .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.confirmation-message {
+  color:  #022c53;
+  text-align: center;
+}   
+.register-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #475569; /* Neutral text color */
+}
+
+.register-link a {
+  color: #0056b3; /* Link color */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+/* ActivityFeed.css */
+.activity-feed {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activity-feed h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .activity-feed ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .activity-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+  }
+  
+  .activity-item:last-child {
+    border-bottom: none;
+  }
+  
+  .activity-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .activity-icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #080826;
+  }
+  
+  .activity-content {
+    flex: 1;
+  }
+  
+  .message .activity-icon {
+    color: #6c5ce7; /* Example color for messages */
+  }
+  
+  .session .activity-icon {
+    color: #00cec9; /* Example color for sessions */
+  }
+  
+  .notification .activity-icon {
+    color: #fdcb6e; /* Example color for notifications */
+  }
+  

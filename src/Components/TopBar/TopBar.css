@@ -1,0 +1,164 @@
+/* General TopBar styling */
+.top-bar {
+  background-color: #F8F9FA; /* Light background */
+  padding: 10px 20px;
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between left, middle, and right sections */
+  align-items: center; /* Center items vertically */
+  border-bottom: 1px solid #ddd; /* Optional border for separation */
+}
+
+/* Sidebar in the top-left */
+.top-bar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Middle section: Search bar container */
+.search-container {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  justify-content: center; /* Center the search bar */
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Search bar styling */
+.search-bar {
+  padding: 12px 20px; /* Increased padding for better height alignment */
+  font-size: 16px; /* Same font size as the button text */
+  width: 100%; /* Full width inside container */
+  max-width: 400px; /* Maximum width of the search bar */
+  border: 2px solid #ddd; /* Soft border */
+  border-radius: 25px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text color */
+  box-sizing: border-box; /* Include padding in width */
+  transition: all 0.3s ease-in-out; /* Smooth transition for focus and hover effects */
+  outline: none; /* Remove default outline on focus */
+}
+
+/* Hover effect for the search bar */
+.search-bar:hover {
+  border-color: #007bff; /* Original blue border on hover */
+}
+
+/* Focus effect for the search bar */
+.search-bar:focus {
+  border-color: #9999cc; /* Blue border on focus */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Subtle glow on focus */
+  width: 420px; /* Expand width on focus */
+}
+
+/* Placeholder text styling */
+.search-bar::placeholder {
+  color: #bbb; /* Light gray color for placeholder text */
+  font-style: italic; /* Slight italic style for the placeholder */
+}
+
+/* Suggestions Dropdown */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1.5px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0 0;
+  z-index: 1000;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Right-aligned section */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between buttons */
+}
+
+/* Buttons styling */
+.buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.top-bar-button {
+  background-color: #d0d0f4; /* Original purple button background */
+  color: black; /* Black text */
+  border: none;
+  padding: 12px 16px; /* Increased padding for larger buttons */
+  font-size: 16px; /* Larger font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.top-bar-button a {
+  text-decoration: none; /* Remove underline */
+  color: black; /* Original button text color */
+}
+
+.top-bar-button:hover {
+  background-color: #a0a0b8; /* Slightly lighter purple on hover */
+}
+
+/* Subscription Section */
+.subscription-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subscription-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.subscription-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.subscribe-btn {
+  background-color: #ff4d4d; /* Original red button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.subscribe-btn:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+.thank-you-message {
+  font-size: 14px;
+  color: #28a745; /* Green thank-you message */
+  font-weight: bold;
+}
+
+

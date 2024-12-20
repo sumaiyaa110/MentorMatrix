@@ -1,0 +1,69 @@
+.explore-the-community-container {
+    padding: 1.5rem;
+    background-color: #E2D2FE;
+  }
+  
+  .community-rows {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  
+  .community-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* padding: .75rem; */
+    background-color: #FBFCF8;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    /* max-width: 800px; */
+  }
+  
+  .community-row.flex-row-reverse {
+    flex-direction: row-reverse; /* Image on the left for these rows */
+  }
+  
+  .community-image-container {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .community-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 8px;
+  }
+  
+  .community-text-container {
+    flex: 2;
+    padding: .5rem;
+  }
+  
+  .community-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: black;
+  }
+  
+  .community-description {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .community-button {
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #080826;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .community-button:hover {
+    background-color: #4338ca;
+  }
+  

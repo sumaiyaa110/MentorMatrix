@@ -1,0 +1,173 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap');
+
+/* General Styles for Dashboard */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  color: #333;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #07143F;
+  color: #ffffff;
+}
+
+.topbar-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.welcome-message {
+  flex: 2;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.topbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logout-button {
+  background-color: #9999cc;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #8585f5;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  display: flex;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 250px;
+  background-color: #4e5b6e;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.sidebar h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.sidebar ul li:hover {
+  background-color: #07143F;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.feature-details {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #ddd;
+}
+
+/* Main Section */
+.main-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #07143F;
+}
+
+/* Analytics Cards */
+.analytics-card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.analytics-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+.toggle-btn {
+  padding: 8px 12px;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.toggle-btn:hover {
+  background-color: #1abc9c;
+  transform: translateY(-2px);
+}
+
+/* Tooltip Customization */
+.custom-tooltip {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Chart Container */
+.recharts-wrapper {
+  margin: 0 auto;
+  max-width: 100%;
+}

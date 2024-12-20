@@ -1,0 +1,113 @@
+.track-mentees {
+  background-color:#f2f6fa ; /* Light blue */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.track-mentees h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 10px;
+}
+
+.track-mentees ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.track-mentees li {
+  background-color: #defbff; /* White */
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.track-mentees li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.track-mentees p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.track-mentees .progress-bar {
+  background: #d0ebff; /* Light blue background */
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0;
+  height: 12px;
+}
+
+.track-mentees .progress-bar div {
+  background: linear-gradient(90deg, #42a5f5, #007bb5); /* Blue gradient */
+  height: 100%;
+  width: 70%; /* Dynamically change based on progress */
+  transition: width 0.4s ease;
+}
+
+.warning-badge {
+  background-color: #e74c3c; /* Red */
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.feedback-btn {
+  background-color: #71308d;
+  color: white;
+}
+
+.feedback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-btn {
+  background-color: #27ae60; /* Green */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #1e8449; /* Darker green */
+}
+
+.remove-btn {
+  background-color: #e74c3c; /* Red */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #c0392b; /* Darker red */
+}

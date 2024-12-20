@@ -1,0 +1,275 @@
+/* Session Container */
+.session-container {
+  padding: 20px;
+  margin-left: 0;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  color: #333;
+  font-family: Arial, sans-serif;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title */
+.session-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #005a8d;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Search and Filter Input */
+.session-search,
+.session-filter {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.session-filter {
+  background-color: #e6f7ff;
+  color: #333;
+}
+
+/* Grid Layout */
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Session Thumbnail */
+.session-thumbnail {
+  background: #e6f7ff;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 10px 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.session-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail-image {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1.5px solid #ccc;
+}
+
+.thumbnail-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #005a8d;
+}
+
+.thumbnail-status {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.status-available {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-filled {
+  background-color: red;
+  color: white;
+}
+
+/* Enroll Now Button */
+.enroll-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  font-size: 0.9em;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.enroll-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Details Button */
+.details-button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.details-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Container */
+.modal-container {
+  position: relative; /* Relative for close button */
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  overflow: auto; /* Prevent content overflow */
+}
+
+/* Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 40px;
+  text-align: center;
+  z-index: 1100;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: #ff3333;
+}
+
+/* Modal Header */
+.modal-header h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Modal Body */
+.modal-body {
+  text-align: center;
+  padding: 10px;
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+/* Modal Footer */
+.modal-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modal-enroll-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-enroll-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .session-container {
+    padding: 15px;
+  }
+
+  .session-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .thumbnail-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .thumbnail-title {
+    font-size: 1em;
+  }
+
+  .thumbnail-status {
+    font-size: 0.8em;
+  }
+
+  .enroll-button {
+    width: 80%;
+    bottom: 15px;
+  }
+}

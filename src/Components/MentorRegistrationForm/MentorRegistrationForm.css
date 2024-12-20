@@ -1,0 +1,94 @@
+/* MentorRegistrationForm.css */
+
+.mentor-registration-form {
+  padding: 20px;
+  background-color: #f0f8ff; /* Light blue background */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center;
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif; /* Add a clean font */
+}
+
+.mentor-registration-form h2 {
+  font-size: 1.5rem;
+  color: #080826; /* Dark text color */
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #080826;
+  margin-bottom: 5px;
+  font-weight: bold; /* Add boldness to labels */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd; /* Soft border */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: #080826;
+  background-color: #fff; /* Ensure consistent input background */
+}
+
+.form-group input:focus {
+  outline: none; /* Remove default focus outline */
+  border: 1px solid #080826; /* Highlight border on focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a soft glow effect */
+}
+
+.submit-btn {
+  background-color: #080826; /* Dark button color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  width: 100%;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background-color: #5f5bd6; /* Light purple for hover */
+  transform: translateY(-2px); /* Slightly elevate button on hover */
+}
+
+.submit-btn:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.response-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.response-message.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.response-message.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+  

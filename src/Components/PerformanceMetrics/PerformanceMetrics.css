@@ -1,0 +1,106 @@
+/* Overall container for PerformanceMetrics */
+.performance-metrics {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Title of the PerformanceMetrics section */
+.performance-metrics h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* Container holding metric items like sessions, rating, feedback */
+.metrics-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px; /* Space between metrics and quiz performance */
+}
+
+/* Individual metric item box styling */
+.metric-item {
+  text-align: center;
+  background-color: #f3b0b0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 30%;
+}
+
+.metric-item h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.metric-item p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #b41b07;
+}
+
+/* Header section for the Performance Metrics page */
+.performance-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.performance-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.performance-header h1 {
+  font-size: 2em;
+  color: #34495e;
+}
+
+/* Main content styling for performance details */
+.performance-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.performance-details h3 {
+  font-size: 1.5em;
+  color: #1abc9c;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.session-performance {
+  margin-bottom: 20px;
+}
+
+.session-performance h4 {
+  font-size: 1.3em;
+  color: #2c3e50;
+}
+
+.quiz-item {
+  font-size: 1.1em;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+/* Footer section with a message */
+.performance-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.performance-footer p {
+  font-size: 1.2em;
+  color: #7f8c8d;
+}
+
+.performance-footer svg {
+  margin-top: 10px;
+}

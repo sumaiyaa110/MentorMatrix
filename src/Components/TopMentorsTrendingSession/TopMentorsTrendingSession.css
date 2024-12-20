@@ -1,0 +1,154 @@
+/* Container Styling */
+.top-mentors-trending-session {
+  padding: 30px 15px; /* Reduced overall padding */
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #f0f7ff, #ffffff);
+  text-align: center;
+}
+
+.unique-section h3 {
+  font-size: 1.8rem; /* Slightly smaller heading */
+  color: #2c3e50;
+  margin-bottom: 15px; /* Reduced spacing below heading */
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Session Cards */
+.session-cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Reduced gap between session cards */
+  flex-wrap: wrap;
+}
+
+.session-card {
+  background: #ffffff;
+  border-radius: 12px; /* Reduced border radius for a sharper look */
+  padding: 15px;
+  width: 230px; /* Slightly smaller width */
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.session-card:hover {
+  transform: translateY(-8px); /* Reduced hover movement */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-logo {
+  font-size: 2.8rem; /* Slightly smaller icon size */
+  color: #007bff;
+  margin-bottom: 8px; /* Reduced spacing below icon */
+}
+
+.session-card h4 {
+  font-size: 1.1rem; /* Slightly smaller text size */
+  color: #2c3e50;
+  margin-bottom: 6px; /* Reduced spacing below topic */
+}
+
+.session-card p {
+  font-size: 0.95rem; /* Slightly smaller font size */
+  color: #555;
+  margin-bottom: 8px; /* Reduced spacing below time */
+}
+
+.session-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 8px; /* Slightly smaller tag size */
+  border-radius: 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.session-tag.beginner {
+  background-color: #28a745;
+}
+
+.session-tag.intermediate {
+  background-color: #ffc107;
+}
+
+.session-tag.advanced {
+  background-color: #dc3545;
+}
+
+/* Mentor Cards */
+.mentor-cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Reduced gap between mentor cards */
+  flex-wrap: wrap;
+}
+
+.mentor-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  width: 230px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mentor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-symbol {
+  font-size: 2.8rem;
+  color: #6f42c1;
+  margin-bottom: 8px;
+}
+
+.mentor-card h4 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.mentor-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.mentor-experience {
+  font-size: 0.85rem;
+  color: #007bff;
+}
+
+.mentor-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.mentor-link:hover {
+  color: #0056b3;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .session-cards,
+  .mentor-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .session-card,
+  .mentor-card {
+    width: 90%; /* Full width for smaller screens */
+  }
+}
+
+

@@ -1,0 +1,256 @@
+/* Main About Us Container */
+.about-us {
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 50px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-us:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about-us h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.about-us h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #007bff;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.about-us p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 20px 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.about-us p + p {
+  margin-top: 25px;
+}
+
+/* Features Section */
+.features-section {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.features-section h2 {
+  font-size: 2.2rem;
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  color: #34495e;
+  padding: 10px;
+  border-left: 4px solid #007bff;
+  background: #f0f8ff;
+  border-radius: 8px;
+}
+
+.features-list li span {
+  font-size: 1.8rem;
+  margin-right: 12px;
+  color: #007bff;
+}
+
+/* Team Section */
+.team-section {
+  margin-top: 50px;
+}
+
+.team-section h2 {
+  font-size: 2.2rem;
+  color: #007bff;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.team-member {
+  text-align: center;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.team-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+  font-size: 1.3rem;
+  margin: 8px 0;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* CTA Section */
+.cta-section {
+  margin-top: 60px;
+  padding: 30px;
+  background: #b6abf0;
+  color: rgb(0, 0, 0);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  background: #2770be;
+  padding: 12px 25px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #003d80;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.2rem;
+  color: #007bff;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.testimonial {
+  padding: 20px;
+  margin: 15px auto;
+  background: #f0f8ff;
+  border-left: 5px solid #007bff;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+.testimonial h4 {
+  font-size: 1rem;
+  color: #34495e;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us {
+    padding: 30px;
+  }
+
+  .about-us h1 {
+    font-size: 2.5rem;
+  }
+
+  .features-section h2,
+  .team-section h2,
+  .cta-section h2,
+  .testimonials-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .features-list li {
+    font-size: 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .testimonial p {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+
+  

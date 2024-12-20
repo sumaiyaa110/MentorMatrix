@@ -1,0 +1,202 @@
+/* Manage Sessions container with animated colorful background */
+.manage-sessions {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  background: linear-gradient(45deg, #6baed6, #a3c9e2, #3b5f74, #5f7a8a);
+  background-size: 400% 400%; /* Expanding background for animation */
+  animation: gradientAnimation 15s ease infinite; /* Infinite animation */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Title style */
+h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Form container */
+.add-session-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Input styles */
+input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border 0.3s;
+}
+
+/* Focus effect for input fields */
+input[type="text"]:focus {
+  border-color: #4CAF50;
+}
+
+/* Button styles */
+button.action-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #8dbafd;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.action-btn:hover {
+  background-color: #8dbafd;
+}
+
+/* Notifications container */
+.notifications {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.notifications h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Sessions list container */
+.sessions-list {
+  margin-top: 30px;
+}
+
+/* Session card with larger size and hover effect */
+.session-card {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.session-card:hover {
+  transform: translateY(-5px); /* Hover effect */
+}
+
+.session-card h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.session-card p {
+  margin: 10px 0;
+  color: #555;
+}
+
+/* Button in session cards */
+button.action-btn {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: #007BFF;
+}
+
+/* Disabled button styles */
+button:disabled {
+  background-color: #ccc;
+}
+
+/* Search bar container */
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Search input style */
+.search-input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 300px;
+  transition: width 0.3s ease;
+}
+
+/* Focus effect on search input */
+.search-input:focus {
+  width: 350px;
+  border-color: #4CAF50;
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container for session details */
+.session-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Style for individual session details */
+.session-info {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Icon style in session details */
+.session-info span {
+  margin-right: 8px;
+}
+
+.session-info strong {
+  color: #4CAF50;
+}

@@ -1,0 +1,153 @@
+.manage-quizzes-container { 
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.add-quiz-btn {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.add-quiz-btn:hover {
+  background-color: #357abd;
+}
+
+.quizzes-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quizzes-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quizzes-list li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quizzes-list li span {
+  flex-grow: 1;
+  font-size: 18px;
+  color: #333;
+}
+
+.quizzes-list button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.quizzes-list button:hover {
+  background-color: #c0392b;
+}
+
+.quizzes-list button:nth-child(2) {
+  background-color: #f39c12;
+}
+
+.quizzes-list button:nth-child(2):hover {
+  background-color: #e67e22;
+}
+
+.edit-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.edit-input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.save-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #27ae60;
+}
+.google-form-link {
+  color: #4a90e2;
+  text-decoration: none;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.google-form-link:hover {
+  text-decoration: underline;
+  color: #357abd;
+}
+
+.edit-input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.edit-input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}

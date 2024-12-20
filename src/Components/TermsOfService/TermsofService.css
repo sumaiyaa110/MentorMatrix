@@ -1,0 +1,30 @@
+.terms-of-service {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f7f8fa, #ffffff);
+    color: #2c3e50;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #34495e;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #7f8c8d;
+  }
+  

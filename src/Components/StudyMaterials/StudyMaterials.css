@@ -1,0 +1,47 @@
+.study-materials {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .study-materials h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .study-materials-content {
+    margin-top: 20px;
+  }
+  
+  .session-materials {
+    margin-bottom: 20px;
+    background-color: #e7f7f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .session-materials h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 12px;
+  }
+  
+  .study-link-item {
+    margin-bottom: 10px;
+  }
+  
+  .study-link-item a {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .study-link-item a:hover {
+    color: #003f6b;
+    text-decoration: underline;
+  }
+  

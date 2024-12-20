@@ -1,0 +1,65 @@
+.upload-materials-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .upload-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .upload-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .upload-btn:hover {
+    background-color: #16a085;
+  }
+  
+  .materials-list {
+    margin-top: 20px;
+  }
+  
+  .material-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .material-item span {
+    flex-grow: 1;
+  }
+  
+  .material-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .material-item button:hover {
+    background-color: #c0392b;
+  }
+  
