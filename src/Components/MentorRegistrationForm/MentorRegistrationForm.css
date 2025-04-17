@@ -2,7 +2,7 @@
 
 .mentor-registration-form {
   padding: 20px;
-  background-color: #f0f8ff; /* Light blue background */
+  background-color: #f0f8ff !important; /* Light blue background */
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
   text-align: center;
@@ -13,7 +13,7 @@
 
 .mentor-registration-form h2 {
   font-size: 1.5rem;
-  color: #080826; /* Dark text color */
+  color: #080826 !important; /* Dark text color */
   margin-bottom: 15px;
 }
 
@@ -25,7 +25,7 @@
 .form-group label {
   display: block;
   font-size: 1rem;
-  color: #080826;
+  color: #080826 !important;
   margin-bottom: 5px;
   font-weight: bold; /* Add boldness to labels */
 }
@@ -48,7 +48,7 @@
 }
 
 .submit-btn {
-  background-color: #080826; /* Dark button color */
+  background-color: #080826 !important; /* Dark button color */
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -61,7 +61,7 @@
 }
 
 .submit-btn:hover {
-  background-color: #5f5bd6; /* Light purple for hover */
+  background-color: #5f5bd6 !important; /* Light purple for hover */
   transform: translateY(-2px); /* Slightly elevate button on hover */
 }
 

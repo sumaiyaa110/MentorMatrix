@@ -1,0 +1,118 @@
+.mentee-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ff;
+    padding: 2rem;
+  }
+  
+  .mentee-profile {
+    background-color: #BAE5F4;
+    border: none;
+    border-radius: 1rem;
+    padding: 3rem;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    color: #f0f8ff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .mentee-profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mentee-profile-container .profile-pic-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .mentee-profile-container .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f8ff;
+  }
+  
+  .mentee-profile-container input,
+  .mentee-profile-container textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #080826;
+  }
+  
+  .mentee-profile-container input::placeholder,
+  .mentee-profile-container textarea::placeholder {
+    color: #ccc;
+  }
+  
+  .mentee-profile-container textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .mentee-profile-container button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mentee-profile-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .mentee-profile-container h2 {
+    color: #080826;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .mentee-profile-container p {
+    color: rgb(24, 21, 21);
+    margin: 5px 0;
+  }
+  
+  .mentee-profile-container strong {
+    color: black;
+  }
+  
+  .mentee-profile-container .icon-container {
+    margin-top: 1.5rem;
+    display: none; /* Removed as LinkedIn/GitHub are not used */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 500px) {
+    .mentee-profile {
+      padding: 2rem;
+    }
+  
+    .mentee-profile-container .profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .mentee-profile-container input,
+    .mentee-profile-container textarea {
+      font-size: 14px;
+    }
+  
+    .mentee-profile-container button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  

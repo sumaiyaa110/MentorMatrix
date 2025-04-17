@@ -167,3 +167,4 @@ const ManageSessions = () => {
 };
 
 export default ManageSessions;
+

@@ -7,7 +7,7 @@
     color: #333;
 }
 
-.dashboard-header {
+.dashboard-container .dashboard-header {
     background-color: #07143F;
     color: #fff;
     padding: 1.5rem 2rem;
@@ -19,7 +19,7 @@
     margin: 1rem;
 }
 
-.dashboard-content {
+.dashboard-container .dashboard-content {
     flex: 1;
     display: flex;
     padding: 2rem;
@@ -27,7 +27,7 @@
 }
 
 /* Sidebar Styles */
-.sidebar {
+.dashboard-container .sidebar {
     flex: 0 0 250px;
     background-color: #4e5b6e;
     color: #fff;
@@ -37,7 +37,7 @@
     height: 100%;
 }
 
-.sidebar h3 {
+.dashboard-container .sidebar h3 {
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
@@ -45,12 +45,12 @@
     color: #f4f4f4;
 }
 
-.sidebar ul {
+.dashboard-container .sidebar ul {
     list-style: none;
     padding: 0;
 }
 
-.sidebar ul li {
+.dashboard-container .sidebar ul li {
     padding: 1rem;
     margin-bottom: 0.5rem;
     background-color: #333;
@@ -60,13 +60,13 @@
     transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.sidebar ul li:hover {
+.dashboard-container .sidebar ul li:hover {
     background-color: #07143F;
     transform: scale(1.05);
 }
 
 /* Main Section Styles */
-.main-section {
+.dashboard-container .main-section {
     flex: 1;
     background-color: #fff;
     padding: 1.5rem;
@@ -74,14 +74,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.main-section h2 {
+.dashboard-container .main-section h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: #07143F;
 }
 
 /* Analytics Section */
-.analytics-section {
+.dashboard-container .analytics-section {
     margin-top: 2rem;
     padding: 1rem;
     background-color: #fff;
@@ -94,18 +94,18 @@
     align-items: center;
 }
 
-.analytics-section h3 {
+.dashboard-container .analytics-section h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
-.analytics-section canvas {
+.dashboard-container .analytics-section canvas {
     max-height: 250px;
     max-width: 100%;
 }
 
 /* Footer */
-.dashboard-footer {
+.dashboard-container .dashboard-footer {
     padding: 1rem;
     font-size: 1rem;
     background-color: #07143F;
@@ -114,46 +114,42 @@
 }
 
 /* Topbar */
-.topbar {
+.dashboard-container .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #07143F; /* Dark background */
+    background-color: #07143F;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-bottom: 1rem;
 }
 
-.topbar-left {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-.welcome-message {
+.dashboard-container .topbar .welcome-message {
     flex: 2;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    color: #ffffff !important; /* Ensure white text */
+    color: #ffffff !important;
 }
 
-.date-time {
+.dashboard-container .topbar .date-time {
     font-size: 14px;
-    color: #ddd; /* Light gray */
+    color: #ddd;
     margin-left: 10px;
 }
 
-.topbar-right {
+.dashboard-container .topbar .topbar-right {
     flex: 1;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+    gap: 15px;
 }
 
-.logout-button {
-    background-color: #4e5b6e;
+.dashboard-container .topbar .logout-button {
+    background-color: #33337e;
     color: white;
     border: none;
     padding: 8px 15px;
@@ -162,6 +158,79 @@
     transition: background-color 0.3s ease;
 }
 
-.logout-button:hover {
-    background-color: #07143F;
+.dashboard-container .topbar .logout-button:hover {
+    background-color: #8585f5;
+}
+
+/* Notification Styles */
+.notification-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 12px;
+}
+
+.notifications-popup {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.notifications-popup .notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.notifications-popup h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #07143F;
+}
+
+.notifications-popup .close-button {
+    background: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.notifications-popup .notifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notifications-popup .notifications-list li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.notifications-popup .notifications-list li:last-child {
+    border-bottom: none;
+}
+
+/* Spacer */
+.spacer {
+    width: 15px;
 }

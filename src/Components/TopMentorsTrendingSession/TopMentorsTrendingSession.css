@@ -1,15 +1,15 @@
 /* Container Styling */
 .top-mentors-trending-session {
-  padding: 30px 15px; /* Reduced overall padding */
+  padding: 30px 15px !important;
   font-family: "Roboto", sans-serif;
   background: linear-gradient(135deg, #f0f7ff, #ffffff);
   text-align: center;
 }
 
 .unique-section h3 {
-  font-size: 1.8rem; /* Slightly smaller heading */
+  font-size: 1.8rem;
   color: #2c3e50;
-  margin-bottom: 15px; /* Reduced spacing below heading */
+  margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -18,48 +18,48 @@
 .session-cards {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Reduced gap between session cards */
+  gap: 15px !important;
   flex-wrap: wrap;
 }
 
 .session-card {
   background: #ffffff;
-  border-radius: 12px; /* Reduced border radius for a sharper look */
-  padding: 15px;
-  width: 230px; /* Slightly smaller width */
+  border-radius: 16px !important;
+  padding: 20px !important;
+  width: 260px !important;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .session-card:hover {
-  transform: translateY(-8px); /* Reduced hover movement */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-logo {
-  font-size: 2.8rem; /* Slightly smaller icon size */
+  font-size: 3rem;
   color: #007bff;
-  margin-bottom: 8px; /* Reduced spacing below icon */
+  margin-bottom: 10px;
 }
 
 .session-card h4 {
-  font-size: 1.1rem; /* Slightly smaller text size */
+  font-size: 1.2rem;
   color: #2c3e50;
-  margin-bottom: 6px; /* Reduced spacing below topic */
+  margin-bottom: 8px;
 }
 
 .session-card p {
-  font-size: 0.95rem; /* Slightly smaller font size */
+  font-size: 1rem;
   color: #555;
-  margin-bottom: 8px; /* Reduced spacing below time */
+  margin-bottom: 10px;
 }
 
 .session-tag {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: bold;
-  padding: 4px 8px; /* Slightly smaller tag size */
+  padding: 5px 10px;
   border-radius: 15px;
   color: #ffffff;
   text-transform: uppercase;
@@ -81,60 +81,65 @@
 .mentor-cards {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Reduced gap between mentor cards */
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 .mentor-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 15px;
-  width: 230px;
+  background: #ffffff !important;
+  border-radius: 16px;
+  padding: 20px;
+  width: 260px;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .mentor-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card-symbol {
-  font-size: 2.8rem;
-  color: #6f42c1;
-  margin-bottom: 8px;
+.mentor-image {
+  width: 150px; /* Made the image larger */
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  object-fit: cover;
 }
 
 .mentor-card h4 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #2c3e50;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .mentor-card p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #555;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .mentor-experience {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #007bff;
+}
+
+.mentor-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 .mentor-link {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 0.85rem;
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
 }
 
 .mentor-link:hover {
-  color: #0056b3;
+  transform: scale(1.2);
 }
 
 /* Responsive Styling */
@@ -147,8 +152,6 @@
 
   .session-card,
   .mentor-card {
-    width: 90%; /* Full width for smaller screens */
+    width: 90%;
   }
 }
-
-

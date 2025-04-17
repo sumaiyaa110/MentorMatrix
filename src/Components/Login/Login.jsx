@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import './Login.css';
+import "./Login.css";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [role, setRole] = useState('mentee');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("mentee");
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -34,10 +34,16 @@ const Login = () => {
         const data = await response.json();
         console.log('Login successful:', data);
 
-        // Save token and user details to localStorage
-        localStorage.setItem("jwtToken", data.token);
-        localStorage.setItem("userDetails", JSON.stringify(data));
-        console.log("Saved Token and Details:", data); // Debugging
+        // Save user details to localStorage
+        localStorage.setItem("userDetails", JSON.stringify({
+          userId: data.id,  // Save user_id here
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          role: data.role,
+          gender: data.gender,
+          about: data.about,
+        }));
 
         // Redirect based on role
         if (role === 'admin') navigate('/dashboard/admin');
@@ -59,7 +65,6 @@ const Login = () => {
     <div className="login-container">
       <h2>Login</h2>
       <form className="login-form" onSubmit={handleSubmit}>
-        {/* Email Input */}
         <input
           type="email"
           placeholder="Email Address"
@@ -67,11 +72,9 @@ const Login = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
-        {/* Password Input */}
         <div className="password-field">
           <input
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             required
             value={password}
@@ -82,11 +85,9 @@ const Login = () => {
             onClick={() => setShowPassword(!showPassword)}
             className="show-password-btn"
           >
-            {showPassword ? 'Hide' : 'Show'}
+            {showPassword ? "Hide" : "Show"}
           </button>
         </div>
-
-        {/* Remember Me Checkbox */}
         <div className="remember-me">
           <input
             type="checkbox"
@@ -96,8 +97,6 @@ const Login = () => {
           />
           <label htmlFor="rememberMe">Remember Me</label>
         </div>
-
-        {/* Role Selector */}
         <select
           name="role"
           value={role}
@@ -107,22 +106,12 @@ const Login = () => {
           <option value="mentor">Mentor</option>
           <option value="admin">Admin</option>
         </select>
-
-        {/* Forgot Password Link */}
-        <Link to="/forgot-password" className="forgot-password-link">Forgot Password?</Link>
-
-        {/* Submit Button */}
+        <Link to="/forgot-password" className="forgot-password-link">
+          Forgot Password?
+        </Link>
         <button type="submit" className="login-btn">Login</button>
-
-        {/* Confirmation Message */}
-        {formSubmitted && (
-          <p className="confirmation-message">Login successful! Redirecting...</p>
-        )}
-
-        {/* Error Message */}
+        {formSubmitted && <p className="confirmation-message">Login successful! Redirecting...</p>}
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-        {/* Register Link */}
         <p className="register-link">
           Don't have an account? <Link to="/signup">Register First</Link>
         </p>
@@ -132,6 +121,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-

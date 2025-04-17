@@ -1,0 +1,219 @@
+/* Container and Heading */
+.available-mentors-container {
+  text-align: center;
+  margin: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.available-mentors-container h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #1d3557;
+}
+
+/* Filters Section */
+.available-mentors-container .filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.available-mentors-container .filters input,
+.available-mentors-container .filters select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #a8dadc;
+  border-radius: 5px;
+  width: 200px;
+  transition: border-color 0.3s;
+}
+
+.available-mentors-container .filters input:focus,
+.available-mentors-container .filters select:focus {
+  outline: none;
+  border-color: #457b9d;
+}
+
+/* Mentors List and Cards */
+.available-mentors-container .mentors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.available-mentors-container .mentor-card {
+  border: 1px solid #a8dadc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #f1faee;
+}
+
+.available-mentors-container .mentor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.available-mentors-container .mentor-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #457b9d;
+}
+
+.available-mentors-container .mentor-card h2 {
+  font-size: 1.5rem;
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.available-mentors-container .mentor-card p {
+  font-size: 14px;
+  color: #457b9d;
+  margin: 5px 0;
+}
+
+/* Modal */
+.available-mentors-container .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.available-mentors-container .modal-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.available-mentors-container .modal-content img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #457b9d;
+}
+
+.available-mentors-container .modal-content h2 {
+  color: #1d3557;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.available-mentors-container .modal-content p {
+  color: #457b9d;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.available-mentors-container .modal-content .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #e63946;
+  transition: color 0.3s;
+}
+
+.available-mentors-container .modal-content .close:hover {
+  color: #a8dadc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .available-mentors-container .mentor-card {
+      width: 90%;
+  }
+
+  .available-mentors-container .modal-content {
+      width: 95%;
+  }
+}
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-picture-large {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+.available-mentors-container .mentor-card button {
+  background: #1d3557;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.available-mentors-container .mentor-card button:hover {
+  background: #457b9d;
+}
+
+.available-mentors-container .mentor-card .rating {
+  color: #f4a261 !important;
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.available-mentors-container .mentor-card .rating span {
+  margin-right: 3px;
+}
+
+.available-mentors-container .rating-button {
+  background: #f4a261 !important;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.available-mentors-container .rating-button:hover {
+  background: #e76f51 !important;
+}
+

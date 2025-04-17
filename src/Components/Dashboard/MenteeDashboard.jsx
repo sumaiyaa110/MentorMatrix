@@ -2,24 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FaBell,
+  FaUserAlt,
   FaCalendarAlt,
   FaComments,
   FaBookOpen,
-  FaChalkboardTeacher,
-  FaTrophy,
   FaTasks,
-  FaUserAlt,
+  FaTrophy,
 } from "react-icons/fa";
 import { Bar, Doughnut } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Tooltip,
-  Legend,
-  ArcElement,
-} from "chart.js";
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend, ArcElement } from "chart.js";
 import "./Dashboard.css";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, ArcElement);
@@ -27,11 +18,8 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, ArcEle
 const MenteeDashboard = () => {
   const navigate = useNavigate();
   const [currentDateTime, setCurrentDateTime] = useState("");
-  const [menteeName, setMenteeName] = useState("Mentee");
-  const [notifications, setNotifications] = useState([
-    { id: 1, message: "Your next session is scheduled for 20th Jan 2025.", isRead: false },
-    { id: 2, message: "New course added: Advanced AI Techniques.", isRead: false },
-  ]);
+  const [profileData, setProfileData] = useState({});
+  const [notifications, setNotifications] = useState([]);
   const [showNotifications, setShowNotifications] = useState(false);
 
   useEffect(() => {
@@ -48,10 +36,21 @@ const MenteeDashboard = () => {
   useEffect(() => {
     const userDetails = JSON.parse(localStorage.getItem("userDetails"));
     if (userDetails) {
-      setMenteeName(`${userDetails.firstName} ${userDetails.lastName}`);
+      setProfileData(userDetails);
     } else {
       navigate("/login");
     }
+
+    // Simulated notifications fetch
+    const fetchNotifications = () => {
+      const dummyNotifications = [
+        "Your next session is scheduled for 20th Jan 2025.",
+        "New session added: Introduction to Digital Art.",
+        "Project deadline extended to 25th Jan 2025.",
+      ];
+      setNotifications(dummyNotifications);
+    };
+    fetchNotifications();
   }, [navigate]);
 
   const handleLogout = () => {
@@ -59,30 +58,13 @@ const MenteeDashboard = () => {
     navigate("/login");
   };
 
-  const motivationalQuotes = [
-    "Keep learning, keep growing!",
-    "Success is a journey, not a destination.",
-    "Every expert was once a beginner.",
-    "The best way to predict the future is to create it.",
-  ];
-  const randomQuote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
-
-  const unreadCount = notifications.filter((n) => !n.isRead).length;
-
-  const handleMarkAllRead = () => {
-    setNotifications((prev) =>
-      prev.map((notification) => ({
-        ...notification,
-        isRead: true,
-      }))
-    );
+  const toggleNotifications = () => {
+    setShowNotifications((prev) => !prev);
   };
 
-  const mentors = [
-    { name: "Tahmima Haque", expertise: "Machine Learning", rating: 4.9, email: "sumaya@example.com" },
-    { name: "Sidratul Muntaha", expertise: "Web Development", rating: 4.8, email: "sidratul@example.com" },
-    { name: "Abid Alauddin Chowdhury", expertise: "Cybersecurity", rating: 4.7, email: "abid@example.com" },
-  ];
+  const closeNotifications = () => {
+    setShowNotifications(false);
+  };
 
   const performanceData = {
     labels: ["Sessions Completed", "Quizzes Attempted", "Certificates Earned"],
@@ -108,43 +90,34 @@ const MenteeDashboard = () => {
 
   return (
     <div className="mentee-dashboard">
-      {/* Topbar */}
       <div className="topbar">
-        <div className="topbar-left">
-          <FaUserAlt size={30} style={{ marginRight: "10px", color: "#2c3e50" }} />
-        </div>
         <div className="welcome-message">
-          Welcome, {menteeName}! <span className="date-time">{currentDateTime}</span>
+          Welcome, {profileData.firstName} {profileData.lastName}! <span className="date-time">{currentDateTime}</span>
         </div>
-        <div className="motivational-quote">{randomQuote}</div>
         <div className="topbar-right">
-          {/* Notifications */}
-          <div className="notifications">
-            <FaBell
-              size={24}
-              style={{
-                cursor: "pointer",
-                color: unreadCount > 0 ? "#f39c12" : "#2c3e50",
-              }}
-              onClick={() => setShowNotifications((prev) => !prev)}
-            />
-            {unreadCount > 0 && <span className="notification-badge">{unreadCount}</span>}
-            {showNotifications && (
-              <div className="notifications-dropdown">
-                <h4>Notifications</h4>
-                <ul>
-                  {notifications.map((notification) => (
-                    <li key={notification.id} className={notification.isRead ? "read" : "unread"}>
-                      {notification.message}
-                    </li>
-                  ))}
-                </ul>
-                <button className="mark-all-btn" onClick={handleMarkAllRead}>
-                  Mark All as Read
+          <button className="notification-button" onClick={toggleNotifications}>
+            <FaBell size={30} />
+            {notifications.length > 0 && <span className="notification-badge">{notifications.length}</span>}
+          </button>
+          {showNotifications && (
+            <div className="notifications-popup">
+              <div className="notifications-header">
+                <h3>Notifications</h3>
+                <button className="close-button" onClick={closeNotifications}>
+                  ×
                 </button>
               </div>
-            )}
-          </div>
+              <ul className="notifications-list">
+                {notifications.length > 0 ? (
+                  notifications.map((notification, index) => (
+                    <li key={index}>{notification}</li>
+                  ))
+                ) : (
+                  <li>No new notifications</li>
+                )}
+              </ul>
+            </div>
+          )}
           <button className="logout-button" onClick={handleLogout}>
             Logout
           </button>
@@ -152,13 +125,17 @@ const MenteeDashboard = () => {
       </div>
 
       <div className="dashboard-content">
-        {/* Sidebar */}
         <aside className="sidebar">
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <Link to="/upcomingSession">
-                <FaCalendarAlt /> Upcoming Sessions
+              <Link to="/menteeProfile">
+                <FaUserAlt /> Mentee Profile
+              </Link>
+            </li>
+            <li>
+              <Link to="/enrolled">
+                <FaCalendarAlt /> Enrolled Sessions
               </Link>
             </li>
             <li>
@@ -173,12 +150,12 @@ const MenteeDashboard = () => {
             </li>
             <li>
               <Link to="/Feedback">
-                <FaComments /> Activity Feed
+                <FaComments /> Give Feedback
               </Link>
             </li>
             <li>
-              <Link to="/announcements">
-                <FaBell /> Announcements
+              <Link to="/FeedbackReview">
+                <FaComments /> Feedback Overview
               </Link>
             </li>
             <li>
@@ -187,7 +164,7 @@ const MenteeDashboard = () => {
               </Link>
             </li>
             <li>
-              <Link to="/ManageQuizzes">
+              <Link to="/QuizComponent">
                 <FaTasks /> Quizzes
               </Link>
             </li>
@@ -196,14 +173,16 @@ const MenteeDashboard = () => {
                 <FaTrophy /> Certificates
               </Link>
             </li>
+            <li>
+              <Link to="/ActivityLog">
+                  <FaBookOpen /> Activity Log
+              </Link>
+            </li>
           </ul>
         </aside>
 
-        {/* Main Section */}
         <main className="main-section">
           <h2>Mentee Dashboard</h2>
-
-          {/* Performance Metrics */}
           <div className="performance-metrics-horizontal">
             <div className="chart-container-horizontal">
               <h3>Performance Metrics</h3>
@@ -214,40 +193,6 @@ const MenteeDashboard = () => {
               <Doughnut data={quizData} options={{ plugins: { legend: { position: "bottom" } } }} />
             </div>
           </div>
-
-          {/* Mentor List */}
-          <div className="card mentor-list-card">
-            <h3>
-              <FaChalkboardTeacher size={30} color="#34495e" /> Mentor List
-            </h3>
-            <table className="mentor-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Expertise</th>
-                  <th>Feedback Rating</th>
-                  <th>Contact</th>
-                </tr>
-              </thead>
-              <tbody>
-                {mentors.map((mentor, index) => (
-                  <tr key={index}>
-                    <td>{mentor.name}</td>
-                    <td>{mentor.expertise}</td>
-                    <td>{mentor.rating}/5</td>
-                    <td>
-                      <button
-                        className="contact-button"
-                        onClick={() => window.open(`mailto:${mentor.email}`)}
-                      >
-                        Contact
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </main>
       </div>
       <footer className="dashboard-footer">© 2024 Mentor-Mentee Scheduling System. All rights reserved.</footer>
@@ -256,4 +201,3 @@ const MenteeDashboard = () => {
 };
 
 export default MenteeDashboard;
-                                                     

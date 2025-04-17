@@ -1,63 +1,129 @@
+/* DeleteUser.css */
 .delete-user {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 8px;
+  background-color: #cce1f7;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.delete-user h3 {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 15px;
+  text-align: center;
+  animation: slideInFromTop 0.8s ease-in-out;
+}
+
+.flagged-users, .deleted-users, .restricted-users {
+  margin-top: 20px;
+}
+
+.flagged-users h4, .deleted-users h4, .restricted-users h4 {
+  font-size: 1.4rem;
+  color: #407bdb;
+  margin-bottom: 10px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.user-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-card {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dbe8f7;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: zoomIn 0.6s ease-in-out;
+}
+
+.user-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.user-card p {
+  font-size: 1rem;
+  color: #34495e;
+  line-height: 1.5;
+}
+
+.action-btn, .reject-btn, .restrict-btn {
+  background-color: #5a9de1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.action-btn:hover {
+  background-color: #4478c9;
+  transform: translateY(-3px);
+}
+
+.restrict-btn {
+  background-color: #1c960c;
+  margin-left: 10px;
+}
+
+.restrict-btn:hover {
+  background-color:#90cc88;
+}
+
+
+.reject-btn {
+  background-color: #20405e;
+  margin-left: 10px;
+}
+
+.reject-btn:hover {
+  background-color: #85abd8;
+}
+
+.symbol {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .delete-user h3 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin-bottom: 15px;
+  to {
+    opacity: 1;
   }
-  
-  .flagged-users, .deleted-users {
-    margin-top: 20px;
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
   }
-  
-  .flagged-users h4, .deleted-users h4 {
-    font-size: 1.25rem;
-    color: #3498db;
-    margin-bottom: 10px;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .user-list {
-    margin-top: 10px;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
   }
-  
-  .user-card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .user-card p {
-    font-size: 1rem;
-    color: #34495e;
-  }
-  
-  .action-btn, .reject-btn {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .action-btn:hover {
-    background-color: #c0392b;
-  }
-  
-  .reject-btn {
-    background-color: #f39c12;
-    margin-left: 10px;
-  }
-  
-  .reject-btn:hover {
-    background-color: #e67e22;
-  }
-  
-  
+}

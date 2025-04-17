@@ -1,0 +1,87 @@
+.upcomingSessions {
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #4A4A8A;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filterInput {
+  width: 65%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.sortButton {
+  padding: 10px 20px;
+  background-color: #4A4A8A;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sortButton:hover {
+  background-color: #6C6FA1;
+}
+
+.sessionList {
+  list-style: none;
+  padding: 0;
+}
+
+.sessionCard {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.sessionCard:hover {
+  transform: translateY(-5px);
+}
+
+.sessionDetails {
+  max-width: 60%;
+}
+
+.sessionDetails p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.mentorPhoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 20px;
+  object-fit: cover;
+}
+
+.noSessions {
+  text-align: center;
+  color: #999;
+  font-size: 18px;
+}

@@ -1,0 +1,136 @@
+.support-container {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e3f2fd; /* Light blue background */
+  }
+  
+  .support-title {
+    font-size: 2.5rem;
+    color: #000000; /* Deep blue for title */
+    text-align: center;
+  }
+  
+  .support-description {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #0d47a1; /* Slightly darker blue for text */
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+    color: #000000; /* Medium blue for section titles */
+  }
+  
+  .quick-access,
+  .status-section,
+  .visitor-resources,
+  .user-resources,
+  .ticket-section,
+  .additional-features {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #42a5f5; /* Accent border in blue */
+  }
+  
+  .quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .quick-link {
+    font-size: 1rem;
+    color: #1565c0; /* Deep blue */
+    text-decoration: none;
+    padding: 10px;
+    background: #e3f2fd; /* Light blue background */
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .quick-link:hover {
+    background: #bbdefb; /* Slightly darker blue on hover */
+    transform: scale(1.05);
+  }
+  
+  .resource-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .resource-list li {
+    margin-bottom: 10px;
+  }
+  
+  .resource-link {
+    color: #0d47a1; /* Dark blue for resource links */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .resource-link:hover {
+    text-decoration: underline;
+  }
+  
+  .ticket-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #90caf9; /* Light blue border */
+    border-radius: 5px;
+    background-color: #e3f2fd; /* Very soft blue input background */
+    color: #0d47a1; /* Dark blue text */
+    resize: none;
+  }
+  
+  .ticket-button {
+    background-color: #42a5f5; /* Medium blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .ticket-button:hover {
+    background-color: #1e88e5; /* Darker blue on hover */
+    transform: scale(1.05);
+  }
+  
+  .feature-card {
+    margin-bottom: 20px;
+    border: 1px solid #bbdefb; /* Light blue border */
+    padding: 15px;
+    border-radius: 8px;
+    background: #e3f2fd; /* Soft blue background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000000; /* Ensure all text inside is black */
+}
+
+.feature-card * {
+    color: #000000 !important; /* Enforce black text for all child elements */
+}
+
+
+
+  .status-indicator {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 5px;
+    background-color: #122f4e; /* Deep blue for system status */
+    text-align: center;
+  }
+  
+  .status-update {
+    font-size: 0.9rem;
+    color: #0d47a1; /* Dark blue for update text */
+    margin-top: 10px;
+  }
+  

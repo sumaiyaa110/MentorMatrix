@@ -3,68 +3,131 @@ import './FeedbackReview.css';
 import { FaStar } from 'react-icons/fa';
 
 const FeedbackReview = () => {
-  const [feedbacks, setFeedbacks] = useState([]); // Holds feedback data
-  const [loading, setLoading] = useState(true); // Indicates loading state
-  const [error, setError] = useState(null); // Tracks any errors
+  const [feedbacks, setFeedbacks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortOption, setSortOption] = useState('newest');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
-  // Fetch feedback from backend
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/feedback'); // API endpoint
+        const response = await fetch('http://localhost:8080/api/feedback');
         if (!response.ok) {
           throw new Error('Failed to fetch feedback data');
         }
         const data = await response.json();
-        setFeedbacks(data); // Update state with fetched data
+        setFeedbacks(data);
       } catch (err) {
         setError(err.message);
       } finally {
-        setLoading(false); // End loading
+        setLoading(false);
       }
     };
 
     fetchFeedbacks();
   }, []);
 
-  // Render loading state
+  const filteredFeedbacks = feedbacks
+    .filter(
+      (feedback) =>
+        feedback.mentor.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        feedback.session.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .sort((a, b) => {
+      if (sortOption === 'newest') return new Date(b.date) - new Date(a.date);
+      if (sortOption === 'oldest') return new Date(a.date) - new Date(b.date);
+      if (sortOption === 'highest') return b.rating - a.rating;
+      if (sortOption === 'lowest') return a.rating - b.rating;
+      return 0;
+    });
+
+  const totalPages = Math.ceil(filteredFeedbacks.length / itemsPerPage);
+  const displayedFeedbacks = filteredFeedbacks.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) setCurrentPage(page);
+  };
+
   if (loading) {
     return <div className="feedback-review-container">Loading feedbacks...</div>;
   }
 
-  // Render error state
   if (error) {
     return <div className="feedback-review-container">Error: {error}</div>;
   }
 
-  // Render feedback list
   return (
     <div className="feedback-review-container">
       <h2 className="feedback-heading">Feedback Reviews</h2>
-      {feedbacks.length === 0 ? (
-        <p>No feedbacks available.</p>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by mentor or session..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+      <div className="sort-options">
+        <label>Sort by:</label>
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+        >
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="highest">Highest Rating</option>
+          <option value="lowest">Lowest Rating</option>
+        </select>
+      </div>
+      {displayedFeedbacks.length === 0 ? (
+        <p className="no-feedback">No feedbacks match your criteria.</p>
       ) : (
         <div className="feedback-list">
-          {feedbacks.map((feedback) => (
-            <div key={feedback.id} className="feedback-card">
+          {displayedFeedbacks.map(({ id, mentor, session, rating, comment, date }) => (
+            <div key={id} className="feedback-card">
               <div className="feedback-header">
-                <h3 className="mentee-name">{feedback.mentor}</h3>
+                <h3 className="mentee-name">{mentor}</h3>
                 <div className="rating">
-                  {[...Array(feedback.rating)].map((_, i) => (
-                    <FaStar key={i} color="#f39c12" />
+                  {[...Array(rating)].map((_, index) => (
+                    <FaStar key={index} color="#f39c12" />
                   ))}
                 </div>
               </div>
-              <p className="feedback-comment">"{feedback.comment}"</p>
+              <p className="session-name">Session: {session || 'N/A'}</p>
+              <p className="feedback-comment">{`"${comment}"`}</p>
               <p className="feedback-date">
-                {new Date(feedback.date || Date.now()).toLocaleDateString()}
+                {new Date(date || Date.now()).toLocaleDateString()}
               </p>
             </div>
           ))}
         </div>
       )}
+      <div className="pagination">
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
 
 export default FeedbackReview;
+

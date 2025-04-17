@@ -1,5 +1,5 @@
 .track-mentees {
-  background-color:#f2f6fa ; /* Light blue */
+  background-color: #f2f6fa; /* Light blue */
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,7 +56,7 @@
   transition: width 0.4s ease;
 }
 
-.warning-badge {
+.track-mentees .warning-badge {
   background-color: #e74c3c; /* Red */
   color: white;
   font-size: 0.9rem;
@@ -67,47 +67,86 @@
   right: 10px;
 }
 
-.feedback-btn {
-  background-color: #71308d;
+/* Updated button styles for larger size */
+.track-mentees .action-btn, 
+.track-mentees .feedback-btn, 
+.track-mentees .remove-btn {
+  background-color: #27ae60; /* Default green for action buttons */
   color: white;
-}
-
-.feedback-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.action-btn {
-  background-color: #27ae60; /* Green */
-  color: white;
-  padding: 10px 15px;
+  padding: 15px 20px; /* Larger padding */
+  font-size: 1.1rem; /* Increased font size */
   border: none;
-  border-radius: 5px;
+  border-radius: 8px; /* Rounded corners */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.action-btn:hover {
+.track-mentees .action-btn:hover {
   background-color: #1e8449; /* Darker green */
 }
 
-.remove-btn {
-  background-color: #e74c3c; /* Red */
+.track-mentees .feedback-btn {
+  background-color: #71308d; /* Purple for feedback button */
+  padding: 15px 20px;
+  font-size: 1.1rem;
+}
+
+.track-mentees .feedback-btn:hover {
+  background-color: #56276b; /* Darker purple */
+}
+
+.track-mentees .remove-btn {
+  background-color: #e74c3c; /* Red for remove button */
+  padding: 15px 20px;
+  font-size: 1.1rem;
+}
+
+.track-mentees .remove-btn:hover {
+  background-color: #c0392b; /* Darker red */
+}
+
+/* Styles for Verify, Warn, and Recover buttons */
+.track-mentees .verify-btn {
+  background-color: #2980b9; /* Blue */
+  padding: 15px 20px;
+  font-size: 1.1rem;
   color: white;
-  padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.remove-btn:hover {
-  background-color: #c0392b; /* Darker red */
+.track-mentees .verify-btn:hover {
+  background-color: #1a5a86; /* Darker blue */
+}
+
+.track-mentees .warn-btn {
+  background-color: #f1c40f; /* Yellow */
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.track-mentees .warn-btn:hover {
+  background-color: #d4ac0d; /* Darker yellow */
+}
+
+.track-mentees .recover-btn {
+  background-color: #8e44ad; /* Purple */
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.track-mentees .recover-btn:hover {
+  background-color: #6c3483; /* Darker purple */
 }

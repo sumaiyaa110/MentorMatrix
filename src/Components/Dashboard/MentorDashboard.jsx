@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./MentorDashboard.css";
 import { Link, useNavigate } from "react-router-dom";
-import { FaBell, FaUserAlt, FaCalendarAlt, FaTasks, FaCommentDots, FaBookOpen } from "react-icons/fa";
+import { FaUserAlt, FaBell, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Line } from "react-chartjs-2";
 import {
@@ -53,6 +53,8 @@ const chartOptions = {
 const MentorDashboard = () => {
   const [mentorName, setMentorName] = useState("Mentor");
   const [currentDateTime, setCurrentDateTime] = useState("");
+  const [notifications, setNotifications] = useState([]);
+  const [showNotifications, setShowNotifications] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -60,14 +62,25 @@ const MentorDashboard = () => {
     if (userDetails && userDetails.role === "mentor") {
       setMentorName(`${userDetails.firstName} ${userDetails.lastName}`);
     } else {
-      navigate("/login"); // Redirect to login if not authenticated
+      navigate("/login");
     }
 
-    // Update date and time every second
     const interval = setInterval(() => {
       const now = new Date();
       setCurrentDateTime(now.toLocaleString());
     }, 1000);
+
+    // Simulated API call for notifications
+    const fetchNotifications = () => {
+      const dummyNotifications = [
+        "New feedback received on your recent session",
+        "Mentee Adiba has updated her project report",
+        "System maintenance scheduled for this weekend",
+      ];
+      setNotifications(dummyNotifications);
+    };
+
+    fetchNotifications();
 
     return () => clearInterval(interval);
   }, [navigate]);
@@ -77,26 +90,53 @@ const MentorDashboard = () => {
     navigate("/login");
   };
 
+  const toggleNotifications = () => {
+    setShowNotifications((prev) => !prev);
+  };
+
+  const closeNotifications = () => {
+    setShowNotifications(false);
+  };
+
   return (
     <div className="dashboard-container">
-      {/* Topbar */}
       <div className="topbar">
-        <div className="topbar-left">
-          <FaUserAlt size={30} style={{ marginRight: "10px", color: "#2c3e50" }} />
-        </div>
         <div className="welcome-message">
           Welcome, {mentorName}! <span className="date-time">{currentDateTime}</span>
         </div>
         <div className="topbar-right">
+          <button className="notification-button" onClick={toggleNotifications}>
+            <FaBell size={30} />
+            {notifications.length > 0 && <span className="notification-badge">{notifications.length}</span>}
+          </button>
+          <div className="spacer"></div>
           <button className="logout-button" onClick={handleLogout}>
             Logout
           </button>
         </div>
       </div>
 
-      {/* Main Dashboard */}
+      {showNotifications && (
+        <div className="notifications-popup">
+          <div className="notifications-header">
+            <h3>Notifications</h3>
+            <button className="close-button" onClick={closeNotifications}>
+              <FaTimes size={16} />
+            </button>
+          </div>
+          <ul className="notifications-list">
+            {notifications.length > 0 ? (
+              notifications.map((notification, index) => (
+                <li key={index}>{notification}</li>
+              ))
+            ) : (
+              <li>No new notifications</li>
+            )}
+          </ul>
+        </div>
+      )}
+
       <div className="dashboard-content">
-        {/* Sidebar */}
         <aside className="sidebar">
           <h3>Quick Links</h3>
           <ul>
@@ -113,7 +153,7 @@ const MentorDashboard = () => {
               <Link to="/FeedbackReview">Feedback Overview</Link>
             </motion.li>
             <motion.li whileHover={{ scale: 1.1 }}>
-            <Link to="/AssignProjects">Assign Projects </Link>
+              <Link to="/AssignProjects">Assign Projects</Link>
             </motion.li>
             <motion.li whileHover={{ scale: 1.1 }}>
               <Link to="/ManageQuizzes">Manage Quizzes</Link>
@@ -124,9 +164,9 @@ const MentorDashboard = () => {
           </ul>
         </aside>
 
-        {/* Main Section */}
         <main className="main-section">
           <h2>Mentor Dashboard</h2>
+
           <div className="analytics-section">
             <h3>Analytics</h3>
             <div style={{ height: "250px", width: "100%" }}>
@@ -136,7 +176,6 @@ const MentorDashboard = () => {
         </main>
       </div>
 
-      {/* Footer */}
       <footer className="dashboard-footer">
         © 2024 Mentor-Mentee Scheduling System. All rights reserved.
       </footer>

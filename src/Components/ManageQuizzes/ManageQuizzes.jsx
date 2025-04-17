@@ -1,116 +1,154 @@
-import React, { useState, useEffect } from 'react';
-import './ManageQuizzes.css';
-import { FaPlusCircle, FaTrash, FaEdit, FaSave, FaLink } from 'react-icons/fa';
+import React, { useState } from "react";
+import "./ManageQuizzes.css";
+import { FaPlusCircle, FaTrash, FaEdit, FaSearch } from "react-icons/fa";
 
 const ManageQuizzes = () => {
-  const [quizzes, setQuizzes] = useState([]);
-  const [editQuizId, setEditQuizId] = useState(null);
-  const [editQuizName, setEditQuizName] = useState('');
-  const [editGoogleForm, setEditGoogleForm] = useState('');
-
-  // Load quizzes from local storage
-  useEffect(() => {
-    const savedQuizzes = localStorage.getItem('quizzes');
-    if (savedQuizzes) {
-      setQuizzes(JSON.parse(savedQuizzes));
-    }
-  }, []);
-
-  // Save quizzes to local storage
-  useEffect(() => {
-    localStorage.setItem('quizzes', JSON.stringify(quizzes));
-  }, [quizzes]);
+  const [quizzes, setQuizzes] = useState([
+    {
+      id: 1,
+      name: "Quantum Mechanics",
+      description: "Explore the fundamentals of quantum mechanics.",
+      timing: "10:00 AM - 11:00 AM",
+      marks: 50,
+    },
+    {
+      id: 2,
+      name: "Machine Learning",
+      description: "Test your knowledge of ML algorithms and concepts.",
+      timing: "12:00 PM - 1:00 PM",
+      marks: 60,
+    },
+    {
+      id: 3,
+      name: "Data Structures",
+      description: "Assess your understanding of key data structures.",
+      timing: "2:00 PM - 3:00 PM",
+      marks: 40,
+    },
+    {
+      id: 4,
+      name: "Cybersecurity",
+      description: "Check your knowledge of cybersecurity principles.",
+      timing: "4:00 PM - 5:00 PM",
+      marks: 70,
+    },
+  ]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [editQuiz, setEditQuiz] = useState(null);
 
   const addQuiz = () => {
     const newQuiz = {
       id: quizzes.length + 1,
       name: `Quiz ${quizzes.length + 1}`,
-      googleFormLink: '',
+      description: "Add a description here",
+      timing: "6:00 PM - 7:00 PM",
+      marks: Math.floor(Math.random() * 50) + 20,
     };
     setQuizzes([...quizzes, newQuiz]);
   };
 
   const deleteQuiz = (id) => {
-    const confirmation = window.confirm('Are you sure you want to delete this quiz?');
-    if (confirmation) {
-      setQuizzes(quizzes.filter((quiz) => quiz.id !== id));
-    }
+    const updatedQuizzes = quizzes.filter((quiz) => quiz.id !== id);
+    setQuizzes(updatedQuizzes);
   };
 
-  const startEditing = (id, currentName, currentLink) => {
-    setEditQuizId(id);
-    setEditQuizName(currentName);
-    setEditGoogleForm(currentLink);
+  const startEdit = (quiz) => {
+    setEditQuiz({ ...quiz });
   };
 
-  const saveEdit = (id) => {
+  const handleEditChange = (e) => {
+    const { name, value } = e.target;
+    setEditQuiz((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const saveEdit = () => {
     const updatedQuizzes = quizzes.map((quiz) =>
-      quiz.id === id
-        ? { ...quiz, name: editQuizName, googleFormLink: editGoogleForm }
-        : quiz
+      quiz.id === editQuiz.id ? editQuiz : quiz
     );
     setQuizzes(updatedQuizzes);
-    setEditQuizId(null);
-    setEditQuizName('');
-    setEditGoogleForm('');
+    setEditQuiz(null);
   };
+
+  const filteredQuizzes = quizzes.filter((quiz) =>
+    quiz.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="manage-quizzes-container">
-      <header className="header">Manage Quizzes</header>
-      <button onClick={addQuiz} className="add-quiz-btn">
-        <FaPlusCircle /> Create New Quiz
-      </button>
-      <ul className="quizzes-list">
-        {quizzes.map((quiz) => (
-          <li key={quiz.id} className="quiz-item">
-            {editQuizId === quiz.id ? (
+      <header>Manage Quizzes</header>
+      <div className="toolbar">
+        <button onClick={addQuiz} className="add-quiz-btn">
+          <FaPlusCircle /> Create New Quiz
+        </button>
+        <div className="search-bar">
+          <FaSearch />
+          <input
+            type="text"
+            placeholder="Search quizzes..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className="quiz-cards">
+        {filteredQuizzes.map((quiz) => (
+          <div className="quiz-card" key={quiz.id}>
+            {editQuiz && editQuiz.id === quiz.id ? (
               <>
                 <input
                   type="text"
-                  value={editQuizName}
-                  onChange={(e) => setEditQuizName(e.target.value)}
-                  placeholder="Quiz Name"
-                  className="edit-input"
+                  name="name"
+                  value={editQuiz.name}
+                  onChange={handleEditChange}
+                  className="quiz-input"
+                />
+                <textarea
+                  name="description"
+                  value={editQuiz.description}
+                  onChange={handleEditChange}
+                  className="quiz-textarea"
                 />
                 <input
                   type="text"
-                  value={editGoogleForm}
-                  onChange={(e) => setEditGoogleForm(e.target.value)}
-                  placeholder="Google Form Link"
-                  className="edit-input"
+                  name="timing"
+                  value={editQuiz.timing}
+                  onChange={handleEditChange}
+                  className="quiz-input"
                 />
-                <button onClick={() => saveEdit(quiz.id)} className="save-btn">
-                  <FaSave /> Save
+                <input
+                  type="number"
+                  name="marks"
+                  value={editQuiz.marks}
+                  onChange={handleEditChange}
+                  className="quiz-input"
+                />
+                <button onClick={saveEdit} className="save-btn">
+                  Save
                 </button>
               </>
             ) : (
               <>
-                <span>{quiz.name}</span>
-                {quiz.googleFormLink && (
-                  <a
-                    href={quiz.googleFormLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="google-form-link"
-                  >
-                    <FaLink /> Open Form
-                  </a>
-                )}
-                <button
-                  onClick={() => startEditing(quiz.id, quiz.name, quiz.googleFormLink)}
-                  className="edit-btn"
-                >
-                  <FaEdit /> Edit
-                </button>
-                <button onClick={() => deleteQuiz(quiz.id)} className="delete-btn">
-                  <FaTrash /> Delete
-                </button>
+                <h3>{quiz.name}</h3>
+                <p>{quiz.description}</p>
+                <p>
+                  <strong>Timing:</strong> {quiz.timing}
+                </p>
+                <p>
+                  <strong>Marks:</strong> {quiz.marks}
+                </p>
+                <div className="quiz-actions">
+                  <button onClick={() => startEdit(quiz)}>
+                    <FaEdit /> Edit
+                  </button>
+                  <button onClick={() => deleteQuiz(quiz.id)}>
+                    <FaTrash /> Delete
+                  </button>
+                </div>
               </>
             )}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

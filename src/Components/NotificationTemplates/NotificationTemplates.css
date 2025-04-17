@@ -1,0 +1,71 @@
+/* Overall template section styling */
+.template-section {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.template-section h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Dropdown (select element) styling */
+.template-section select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: black; /* Black text color for the dropdown */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Dropdown options (option element) styling */
+.template-section select option {
+  color: black; /* Black text color for options */
+  background-color: white;
+}
+
+/* Focus style for the dropdown */
+.template-section select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Template details section styling */
+.template-details {
+  margin-top: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
+
+/* Styling for paragraphs in the details section */
+.template-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Optional: Hover effect for the template details box */
+.template-details:hover {
+  background-color: #eaeaea;
+}
+
+/* Optional: Add transitions for smoother interactions */
+.template-section select,
+.template-details {
+  transition: all 0.3s ease;
+}

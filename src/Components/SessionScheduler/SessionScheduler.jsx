@@ -15,20 +15,33 @@ const SessionScheduler = () => {
   const [sessionDetails, setSessionDetails] = useState([]);
   const [errorMessage, setErrorMessage] = useState(""); // Error message state
 
-  // Load sessions from the backend
+  // Load sessions for the logged-in user from the backend
   useEffect(() => {
     const fetchSessions = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch("http://localhost:8080/api/sessions");
+
+        // Get user ID from localStorage
+        const userDetails = JSON.parse(localStorage.getItem("userDetails"));
+        const userId = userDetails?.userId;
+
+        if (!userId) {
+          setErrorMessage("User ID not found. Please log in again.");
+          return;
+        }
+
+        const response = await fetch(`http://localhost:8080/api/sessions/user/${userId}`);
         if (response.ok) {
           const data = await response.json();
           setSessionDetails(data);
         } else {
-          console.error("Failed to fetch sessions:", await response.text());
+          const errorText = await response.text();
+          console.error("Failed to fetch sessions:", errorText);
+          setErrorMessage("Failed to load sessions.");
         }
       } catch (error) {
         console.error("Error fetching sessions:", error);
+        setErrorMessage("An error occurred while fetching sessions.");
       } finally {
         setIsLoading(false);
       }
@@ -37,11 +50,21 @@ const SessionScheduler = () => {
     fetchSessions();
   }, []);
 
+  // Handle session submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!selectedTime || !topic || !description) {
       setErrorMessage("Please fill in all the fields!");
+      return;
+    }
+
+    // Get user ID from localStorage
+    const userDetails = JSON.parse(localStorage.getItem("userDetails"));
+    const userId = userDetails?.userId;
+
+    if (!userId) {
+      setErrorMessage("User ID not found. Please log in again.");
       return;
     }
 
@@ -55,7 +78,7 @@ const SessionScheduler = () => {
     try {
       setIsLoading(true);
       setErrorMessage(""); // Clear previous errors
-      const response = await fetch("http://localhost:8080/api/sessions", {
+      const response = await fetch(`http://localhost:8080/api/sessions?userId=${userId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,6 +109,7 @@ const SessionScheduler = () => {
     }
   };
 
+  // Handle session deletion
   const handleRemoveSession = async (id) => {
     try {
       const response = await fetch(`http://localhost:8080/api/sessions/${id}`, {
@@ -198,7 +222,6 @@ const SessionScheduler = () => {
 };
 
 export default SessionScheduler;
-
 
 
 

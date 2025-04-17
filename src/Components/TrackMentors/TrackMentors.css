@@ -29,6 +29,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
 }
 
 .track-mentors li:hover {
@@ -54,10 +55,9 @@
   color: #2980b9;
 }
 
-.action-btn {
+.track-mentors .action-btn,
+.track-mentors .feedback-btn {
   display: block;
-  background: linear-gradient(135deg, #6dd5ed, #2193b0);
-  color: white;
   text-align: center;
   padding: 10px 15px;
   border: none;
@@ -66,19 +66,48 @@
   font-size: 14px;
   font-weight: 600;
   transition: background 0.3s ease;
+  margin-top: 10px;
 }
 
-.action-btn:hover {
+.track-mentors .action-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.track-mentors .action-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+.track-mentors .feedback-btn {
+  background: linear-gradient(135deg, #6dd5ed, #2193b0);
+  color: white;
+}
+
+.track-mentors .feedback-btn:hover {
   background: linear-gradient(135deg, #2193b0, #6dd5ed);
 }
 
-.search-container {
+/* Status Highlighting */
+.track-mentors li.inactive {
+  border: 2px solid #e74c3c;
+}
+
+.track-mentors li.low-rating {
+  border: 2px solid #f39c12;
+}
+
+.track-mentors li.on-leave {
+  border: 2px solid #f1c40f;
+}
+
+/* Search and Filter */
+.track-mentors .search-container {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.search-bar {
+.track-mentors .search-bar {
   width: 300px;
   padding: 10px 15px;
   border: 1px solid #dcdcdc;
@@ -87,12 +116,12 @@
   font-size: 14px;
 }
 
-.search-bar:focus {
+.track-mentors .search-bar:focus {
   outline: none;
   border-color: #3498db;
 }
 
-.status-filter {
+.track-mentors .status-filter {
   width: 200px;
   padding: 10px;
   border: 1px solid #dcdcdc;
@@ -100,15 +129,15 @@
   font-size: 14px;
 }
 
-.status-filter:focus {
+.track-mentors .status-filter:focus {
   outline: none;
   border-color: #3498db;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .search-bar,
-  .status-filter {
+  .track-mentors .search-bar,
+  .track-mentors .status-filter {
     width: 100%;
     margin-bottom: 10px;
   }

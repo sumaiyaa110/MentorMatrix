@@ -17,23 +17,28 @@ export const SidebarData = [
     icon: <FaIcons.FaBook />,
   },
   {
-    title: 'FeedBack',
+    title: 'Available Mentors',
+    path: '/available-mentors',
+    icon: <FaIcons.FaUsers />,
+  },
+  
+  {
+    title: 'Feedback',
     path: '/messages',
     icon: <FaIcons.FaEnvelopeOpenText />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
-
   },
   {
     title: 'Support',
     path: '/support',
     icon: <IoIcons.IoMdHelpCircle />,
   },
-
   {
-    title: 'FAQs', // New FAQ item
+    title: 'FAQs',
     path: '/faqs',
     icon: <FaIcons.FaQuestionCircle />,
-  }
+  },
+ 
 ];

@@ -23,6 +23,20 @@ function BlogInsights() {
     },
     {
       id: 2,
+      name: "Nazia Ahmed",
+      avatar: "👩‍⚕️",
+      tags: ["Health", "Wellness"],
+      content: "Your health is your wealth. Take care of yourself first.",
+      likes: 15,
+      dislikes: 0,
+      love: 2,
+      comments: [],
+      isFollowed: true,
+      reaction: null,
+      date: "2024-12-11",
+    },
+    {
+      id: 3,
       name: "Sofia Rahman",
       avatar: "👩‍💻",
       tags: ["Inclusivity", "Empowerment"],
@@ -36,7 +50,7 @@ function BlogInsights() {
       date: "2024-12-02",
     },
     {
-      id: 3,
+      id: 4,
       name: "Fahim Hasan",
       avatar: "👨‍🎨",
       tags: ["Creativity", "Design"],
@@ -50,7 +64,7 @@ function BlogInsights() {
       date: "2024-12-03",
     },
     {
-      id: 4,
+      id: 5,
       name: "Nazmul Islam",
       avatar: "👨‍💼",
       tags: ["Business", "Leadership"],
@@ -64,7 +78,7 @@ function BlogInsights() {
       date: "2024-12-04",
     },
     {
-      id: 5,
+      id: 6,
       name: "Mahiya Ahmed",
       avatar: "👩‍🔬",
       tags: ["Science", "Research"],
@@ -78,7 +92,7 @@ function BlogInsights() {
       date: "2024-12-05",
     },
     {
-      id: 6,
+      id: 7,
       name: "Tasnim Akter",
       avatar: "👩‍🍳",
       tags: ["Food", "Lifestyle"],
@@ -92,7 +106,7 @@ function BlogInsights() {
       date: "2024-12-06",
     },
     {
-      id: 7,
+      id: 8,
       name: "Zahid Hossain",
       avatar: "👨‍🔧",
       tags: ["Technology", "Innovation"],
@@ -106,7 +120,7 @@ function BlogInsights() {
       date: "2024-12-07",
     },
     {
-      id: 8,
+      id: 9,
       name: "Raihan Chowdhury",
       avatar: "👨‍💻",
       tags: ["Programming", "Career"],
@@ -120,7 +134,7 @@ function BlogInsights() {
       date: "2024-12-08",
     },
     {
-      id: 9,
+      id: 10,
       name: "Raisa Siddique",
       avatar: "👩‍🎤",
       tags: ["Culture", "Art"],
@@ -134,7 +148,7 @@ function BlogInsights() {
       date: "2024-12-09",
     },
     {
-      id: 10,
+      id: 11,
       name: "Shakib Rahman",
       avatar: "👨‍🏫",
       tags: ["Education", "Community"],
@@ -147,20 +161,7 @@ function BlogInsights() {
       reaction: null,
       date: "2024-12-10",
     },
-    {
-      id: 11,
-      name: "Nazia Ahmed",
-      avatar: "👩‍⚕️",
-      tags: ["Health", "Wellness"],
-      content: "Your health is your wealth. Take care of yourself first.",
-      likes: 15,
-      dislikes: 0,
-      love: 2,
-      comments: [],
-      isFollowed: true,
-      reaction: null,
-      date: "2024-12-11",
-    },
+    
     {
       id: 12,
       name: "Rifat Hossain",
@@ -303,10 +304,7 @@ function BlogInsights() {
     return "👤 Member";
   };
 
-  const deleteOpinion = (id) => {
-    setOpinions(opinions.filter((opinion) => opinion.id !== id));
-    addNotification("Opinion deleted!");
-  };
+  
 
   const editOpinion = (id, newContent) => {
     setOpinions(
@@ -356,14 +354,7 @@ function BlogInsights() {
       <p className="blog-description">Explore opinions and share your thoughts to inspire others!</p>
 
       <div className="controls">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search posts..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
+        
         <div className="reading-mode">
           <label>Font Size:</label>
           <button onClick={() => setFontSize((size) => Math.max(size - 2, 10))}>A-</button>
@@ -372,38 +363,24 @@ function BlogInsights() {
             {darkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
-        <div className="category-filters">
-          <label>Filter by Category:</label>
-          <select onChange={(e) => setSelectedCategory(e.target.value)}>
-            <option value="">All</option>
-            <option value="Education">Education</option>
-            <option value="Creativity">Creativity</option>
-            <option value="Inclusivity">Inclusivity</option>
-            <option value="Science">Science</option>
-            <option value="Food">Food</option>
-            <option value="Technology">Technology</option>
-            <option value="Programming">Programming</option>
-            <option value="Lifestyle">Lifestyle</option>
-            <option value="Motivation">Motivation</option>
-          </select>
-        </div>
-        <div className="sorting">
-          <label>Sort by:</label>
-          <select onChange={(e) => setSortBy(e.target.value)}>
+      
+           <div className="sorting">
+           <label>Sort by:</label>
+           <select onChange={(e) => setSortBy(e.target.value)}>
             <option value="default">Default</option>
             <option value="likes">Most Liked</option>
             <option value="date">Newest</option>
-          </select>
-        </div>
-        <div className="language-switcher">
-          <label>Language:</label>
-          <select onChange={(e) => setLanguage(e.target.value)}>
+           </select>
+         </div>
+         <div className="language-switcher">
+           <label>Language:</label>
+           <select onChange={(e) => setLanguage(e.target.value)}>
             <option value="en">English</option>
             <option value="bn">Bangla</option>
             <option value="es">Spanish</option>
-          </select>
+           </select>
+          </div>
         </div>
-      </div>
 
       <div className="reaction-summary">
         <p>👍 {totalReactions.likes} Likes</p>
@@ -438,7 +415,30 @@ function BlogInsights() {
           </div>
         ))}
       </div>
-
+        
+      <div className="category-filters">
+           <label>Filter by Category:</label>
+           <select onChange={(e) => setSelectedCategory(e.target.value)}>
+            <option value="">All</option>
+            <option value="Education">Education</option>
+            <option value="Creativity">Creativity</option>
+            <option value="Inclusivity">Inclusivity</option>
+            <option value="Science">Science</option>
+            <option value="Food">Food</option>
+            <option value="Technology">Technology</option>
+            <option value="Programming">Programming</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Motivation">Motivation</option>
+            </select>
+           </div>
+      <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search posts..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       <h2>📜 All Posts</h2>
       <div className="blog-posts">
         {filteredOpinions.slice(0, showMore ? filteredOpinions.length : 4).map((opinion) => (
@@ -449,17 +449,23 @@ function BlogInsights() {
                 className="author-name"
                 onClick={() => setSelectedUser(opinion)} // View User Profile
               >
-                {opinion.name} {assignBadge(opinion)}
+                {opinion.name} {}
               </span>
               <button onClick={() => toggleFollow(opinion.id)}>
                 {opinion.isFollowed ? "Unfollow" : "Follow"}
               </button>
-              <button onClick={() => toggleBookmark(opinion.id)}>
-                {bookmarkedPosts.includes(opinion.id) ? "Unbookmark" : "Bookmark"}
-              </button>
+              <button onClick={() => toggleBookmark(opinion.id)} className="start-btn">
+  {bookmarkedPosts.includes(opinion.id) ? (
+    <span role="img" aria-label="unstart">⭐</span> // Filled star (for "Unstart")
+  ) : (
+    <span role="img" aria-label="start">☆</span> // Empty star (for "Start")
+  )}
+</button>
+
             </div>
+          
             <p className="content" style={{ fontSize: `${fontSize}px` }}>
-              {translateContent(opinion.content)}
+               {translateContent(opinion.content)}
             </p>
             <div className="tags">
               {opinion.tags.map((tag, index) => (
@@ -487,10 +493,7 @@ function BlogInsights() {
               >
                 ❤️ {opinion.love}
               </button>
-              <button onClick={() => deleteOpinion(opinion.id)}>Delete</button>
-              <button onClick={() => editOpinion(opinion.id, prompt("Edit your opinion"))}>
-                Edit
-              </button>
+             
             </div>
           </div>
         ))}
@@ -513,19 +516,6 @@ function BlogInsights() {
 }
 
 export default BlogInsights;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

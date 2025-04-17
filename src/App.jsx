@@ -41,17 +41,23 @@ import ContactUs from "./Components/ContactUs/ContactUs";
 import SessionList from "./Components/SessionList/SessionList";
 import FAQs from "./Components/FAQs/FAQs";
 import Feedback from "./Components/Feedback/Feedback";
-import Profile from "./Components/Profile/Profile";
 import ViewNotification from "./Components/ViewNotification/ViewNotification";
 import FeedbackPage from "./Components/FeedbackPage/FeedbackPage";
 import Sessions from "./Components/Sessions/Sessions";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
+import EnrolledSessions from "./Components/EnrolledSessions/EnrolledSessions";
+import QuizComponent from "./Components/QuizComponent/QuizComponent";
 import TermsOfService from "./Components/TermsOfService/TermsOfService";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
-
-
+import Notifications from "./Components/Notifications/Notifications";
+import MenteeProfile from "./Components/MenteeProfile/MenteeProfile";
+import NotificationTemplates from "./Components/NotificationTemplates/NotificationTemplates";
+import Support from "./Components/Support/Support";
+import ActivityLog from "./Components/ActivityLog/ActivityLog";
+import AvailableMentors from "./Components/AvailableMentors/AvailableMentors";
+import ScheduleNotification from "./Components/ScheduleNotification/ScheduleNotification";
 // Wrapper Component to render TopBar with Sidebar only on homepage
 const ConditionalTopBar = () => {
   const location = useLocation();
@@ -65,6 +71,7 @@ const ConditionalSidebar = () => {
 };
 
 const App = () => {
+
   return (
     <Router>
       <ConditionalTopBar /> {/* TopBar for homepage */}
@@ -84,6 +91,8 @@ const App = () => {
               </>
             }
           />
+<Route path="/available-mentors" element={<AvailableMentors />} />
+          <Route path="/support" element={<Support/>} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/messages" element={<FeedbackPage />} />
@@ -99,14 +108,17 @@ const App = () => {
           <Route path="/dashboard/mentee" element={<MenteeDashboard />} />
           <Route path="/Feedback" element={<Feedback />} />
           {/* Mentor Dashboard Features */}
-          <Route path="/MentorProfile" element={<MentorProfile />} />
+          <Route path="/Profile" element={<MentorProfile />} />
           <Route path="/SessionHistory" element={<SessionHistory />} />
           <Route path="/SessionScheduler" element={<SessionScheduler />} />
           <Route path="/UploadMaterial" element={<UploadMaterials />} />
           <Route path="/ManageQuizzes" element={<ManageQuizzes />} />
           <Route path="/AssignProjects" element={<AssignProjects />} />
           <Route path="/FeedbackReview" element={<FeedbackReview />} />
+          <Route path="/QuizComponent" element={<QuizComponent/>} />
           {/* Other Routes */}
+
+          <Route path="/menteeProfile" element={<MenteeProfile />} />
           <Route path="/upcomingSession" element={<UpcomingSessions />} />
           <Route path="/PerformanceMetrics" element={<PerformanceMetrics />} />
           <Route path="/StudyMaterials" element={<StudyMaterials />} />
@@ -118,7 +130,7 @@ const App = () => {
           <Route path="/ManageSessions" element={<ManageSessions />} />
           <Route path="/AvailSessions" element={<Sessions />} />
           {/* Authentication */}
-          <Route path="/Profile" element={<Profile />} />
+          <Route path="/enrolled" element={<EnrolledSessions />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -127,6 +139,10 @@ const App = () => {
           <Route path="/sessions" element={<SessionList />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/Notifications" element={<ViewNotification />} />
+          <Route path="/RealTimeNotifications" element={<Notifications />} />
+          <Route path="/ScheduleNotification" element={<ScheduleNotification />} />
+          <Route path="/ActivityLog" element={<ActivityLog />} />
+          <Route path="/NotificationTemplates" element={<NotificationTemplates />} />
         </Routes>
       </div>
     </Router>

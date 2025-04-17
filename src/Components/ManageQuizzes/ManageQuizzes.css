@@ -1,153 +1,91 @@
-.manage-quizzes-container { 
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+/* General styling */
+.manage-quizzes-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  min-height: 100vh;
 }
 
 header {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 32px;
   text-align: center;
-  color: #333;
+  color: #004d40;
+  margin-bottom: 30px;
 }
 
-.add-quiz-btn {
-  background-color: #4a90e2;
-  color: white;
-  padding: 12px 18px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: inline-block;
-  margin-bottom: 20px;
-  font-size: 16px;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.add-quiz-btn:hover {
-  background-color: #357abd;
-}
-
-.quizzes-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.quizzes-list li {
+/* Toolbar */
+.toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 15px 20px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 30px;
 }
 
-.quizzes-list li:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.quizzes-list li span {
-  flex-grow: 1;
-  font-size: 18px;
-  color: #333;
-}
-
-.quizzes-list button {
-  background-color: #e74c3c;
+.add-quiz-btn {
+  background: linear-gradient(45deg, #04584f, #00695c);
   color: white;
-  border: none;
-  padding: 10px 15px;
-  margin-left: 10px;
-  border-radius: 5px;
+  padding: 12px 20px;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.add-quiz-btn:hover {
+  background: linear-gradient(45deg, #00897b,#00897b);
+}
+
+.search-bar {
   display: flex;
   align-items: center;
-  gap: 5px;
-  transition: background-color 0.3s ease;
+  background: white;
+  border-radius: 50px;
+  padding: 8px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.quizzes-list button:hover {
-  background-color: #c0392b;
-}
-
-.quizzes-list button:nth-child(2) {
-  background-color: #f39c12;
-}
-
-.quizzes-list button:nth-child(2):hover {
-  background-color: #e67e22;
-}
-
-.edit-input {
-  flex-grow: 1;
-  padding: 10px 15px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-right: 10px;
-  transition: border-color 0.3s ease;
-}
-
-.edit-input:focus {
-  border-color: #4a90e2;
+.search-bar input {
+  border: none;
   outline: none;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #004d40;
 }
 
-.save-btn {
-  background-color: #2ecc71;
+/* Quiz Cards */
+.quiz-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.quiz-card {
+  background: linear-gradient(145deg, #b2ebf2, #ffffff);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.quiz-card:hover {
+  transform: scale(1.05);
+}
+
+.quiz-card h3 {
+  font-size: 20px;
+  color: #004d40;
+}
+
+.quiz-actions button {
+  background:#004d40 ;
   color: white;
   border: none;
   padding: 8px 12px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: background-color 0.3s ease;
 }
 
-.save-btn:hover {
-  background-color: #27ae60;
-}
-.google-form-link {
-  color: #4a90e2;
-  text-decoration: none;
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.google-form-link:hover {
-  text-decoration: underline;
-  color: #357abd;
-}
-
-.edit-input {
-  flex-grow: 1;
-  padding: 8px 12px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-right: 10px;
-  transition: border-color 0.3s ease;
-}
-
-.edit-input:focus {
-  border-color: #4a90e2;
-  outline: none;
+.quiz-actions button:hover {
+  background:#26a69a;
 }

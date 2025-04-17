@@ -1,44 +1,45 @@
 
 .key-features {
-    padding: 20px;
-    
-  }
+  padding: 20px;
   
-  .feature-card {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd; /* Optional: border around cards */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #fae2e2e3; /* Background color for the card */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s; /* Animation on hover */
-  }
+}
+
+.feature-card {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd !important; /* Optional: border around cards */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fae2e2e3 !important; /* Background color for the card */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s; /* Animation on hover */
+}
+
+.feature-card img {
+  width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 4px; /* Optional: rounded corners for images */
+  max-width: 250px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+.feature-card h3 {
+  margin: 15px 0 10px; /* Spacing for headings */
+  color:#080826 !important
+}
+
+.feature-card p {
+  color: #666 !important; /* Grey color for the explanation */
   
-  .feature-card img {
-    width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 4px; /* Optional: rounded corners for images */
-    max-width: 250px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .feature-card h3 {
-    margin: 15px 0 10px; /* Spacing for headings */
-  }
-  
-  .feature-card p {
-    color: #666; /* Grey color for the explanation */
-    
-  }
-  
-  /* Optional hover effect */
-  .feature-card:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-  }
-  
-  .h2{
-    text-align: center;
-  }
+}
+
+/* Optional hover effect */
+.feature-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.h2{
+  text-align: center;
+}

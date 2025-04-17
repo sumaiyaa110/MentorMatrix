@@ -1,35 +1,35 @@
-
 .how-it-works-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create a three-column layout */
-    gap: 20px; /* Space between steps */
-  }
-  
-  .step-item {
-    background-color: #BAE5F4; /* White background for each step */
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .step-icon {
-    width: 60px; /* Adjust the icon size */
-    height: 60px;
-    margin-bottom: 10px; /* Space between icon and title */
-  }
-  
-  .step-title {
-    font-size: 1.5rem; /* Step title font size */
-    margin-bottom: 5px; /* Space between title and description */
-  }
-  
-  .step-description {
-    font-size: 1rem; /* Description font size */
-    color: #666; /* Description color */
-  }
+  text-align: center;
+  padding: 20px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create a three-column layout */
+  gap: 20px; /* Space between steps */
+}
+
+.step-item {
+  background-color: #BAE5F4; /* White background for each step */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+  width: 60px; /* Adjust the icon size */
+  height: 60px;
+  margin-bottom: 10px; /* Space between icon and title */
+}
+
+.step-title {
+  font-size: 1.5rem; /* Step title font size */
+  margin-bottom: 5px; /* Space between title and description */
+  color:#080826
+}
+
+.step-description {
+  font-size: 1rem; /* Description font size */
+  color: #666; /* Description color */
+}
   

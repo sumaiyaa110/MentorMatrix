@@ -1,190 +1,191 @@
+/* Session History Container */
 .session-history-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  header {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-filter {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-filter input {
-    padding: 10px;
-    width: 70%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .search-filter button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .search-filter button:hover {
-    background-color: #45a049;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  table th,
-  table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-  }
-  
-  table th {
-    background-color: #f4f4f4;
-  }
-  
-  .view-details-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .view-details-btn:hover {
-    background-color: #2980b9;
-  }
-  
-  .download-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f39c12;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .download-btn:hover {
-    background-color: #e67e22;
-  }
-  
-  .download-btn svg {
-    margin-right: 5px;
-  }
-  
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .pagination button {
-    padding: 8px 12px;
-    margin: 0 5px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .pagination button.active-page {
-    background-color: #357abd;
-  }
-  
-  .pagination button:hover {
-    background-color: #45a049;
-  }
-  
-  .export-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .close-modal-btn {
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .close-modal-btn:hover {
-    background-color: #c0392b;
-  }
-  .filters {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-filter {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-  
-  .search-filter input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 250px;
-  }
-  
-  .dropdown-filters {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .dropdown-filters select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    font-size: 14px;
-  }
-  
-  .dropdown-filters select:hover {
-    border-color: #4caf50;
-  }
-    
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.session-history-container header {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.session-history-container .search-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.session-history-container .search-filter input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.session-history-container .search-filter button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.session-history-container .search-filter button:hover {
+  background-color: #45a049;
+}
+
+.session-history-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.session-history-container table th,
+.session-history-container table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.session-history-container table th {
+  background-color: #f4f4f4;
+}
+
+.session-history-container .view-details-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.session-history-container .view-details-btn:hover {
+  background-color: #2980b9;
+}
+
+.session-history-container .download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.session-history-container .download-btn:hover {
+  background-color: #e67e22;
+}
+
+.session-history-container .download-btn svg {
+  margin-right: 5px;
+}
+
+.session-history-container .pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.session-history-container .pagination button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.session-history-container .pagination button.active-page {
+  background-color: #357abd;
+}
+
+.session-history-container .pagination button:hover {
+  background-color: #45a049;
+}
+
+.session-history-container .export-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.session-history-container .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-history-container .modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.session-history-container .close-modal-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.session-history-container .close-modal-btn:hover {
+  background-color: #c0392b;
+}
+
+.session-history-container .filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.session-history-container .search-filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.session-history-container .search-filter input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.session-history-container .dropdown-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.session-history-container .dropdown-filters select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.session-history-container .dropdown-filters select:hover {
+  border-color: #4caf50;
+}

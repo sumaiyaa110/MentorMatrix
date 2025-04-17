@@ -1,5 +1,5 @@
-import React from 'react';
-import './UpcomingSessions.css';
+import React, { useState } from 'react';
+import styles from './UpcomingSessions.module.css';
 import MentorProfile from "../../assets/mentorProfile.jpg";
 import MentorProfile1 from "../../assets/mentorProfile1.jpg";
 
@@ -18,26 +18,68 @@ const sessions = [
     mentor: 'Sidratul Muntaha',
     mentorPhoto: MentorProfile1,
   },
-  // Add more sessions as needed
+  // Add more sessions here...
 ];
 
 const UpcomingSessions = () => {
+  const [filter, setFilter] = useState('');
+  const [sortOrder, setSortOrder] = useState('asc');
+
+  const filteredSessions = sessions
+    .filter(session =>
+      session.mentor.toLowerCase().includes(filter.toLowerCase()) ||
+      session.date.includes(filter)
+    )
+    .sort((a, b) => {
+      if (sortOrder === 'asc') {
+        return new Date(a.date) - new Date(b.date);
+      }
+      return new Date(b.date) - new Date(a.date);
+    });
+
   return (
-    <div className="upcoming-sessions">
-      <h1>Upcoming Mentorship Sessions</h1>
-      <ul>
-        {sessions.map((session, index) => (
-          <li key={index} className="session-card">
-            <div>
-              <p><strong>Date:</strong> {session.date}</p>
-              <p><strong>Time:</strong> {session.time}</p>
-              <p><strong>Topic:</strong> {session.topic}</p>
-              <p><strong>Mentor:</strong> {session.mentor}</p>
-            </div>
-            <img src={session.mentorPhoto} alt={`Mentor ${session.mentor}`} className="mentor-photo" />
-          </li>
-        ))}
-      </ul>
+    <div className={styles.upcomingSessions}>
+      <h1 className={styles.heading}>Upcoming Mentorship Sessions</h1>
+
+      {/* Filters */}
+      <div className={styles.filters}>
+        <input
+          type="text"
+          placeholder="Search by mentor or date..."
+          value={filter}
+          onChange={e => setFilter(e.target.value)}
+          className={styles.filterInput}
+        />
+        <button
+          onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
+          className={styles.sortButton}
+        >
+          Sort by Date ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
+        </button>
+      </div>
+
+      {/* Session List */}
+      {filteredSessions.length > 0 ? (
+        <ul className={styles.sessionList}>
+          {filteredSessions.map((session, index) => (
+            <li key={index} className={styles.sessionCard}>
+              <div className={styles.sessionDetails}>
+                <p><strong>Date:</strong> {session.date}</p>
+                <p><strong>Time:</strong> {session.time}</p>
+                <p><strong>Topic:</strong> {session.topic}</p>
+                <p><strong>Mentor:</strong> {session.mentor}</p>
+              </div>
+              <img
+                src={session.mentorPhoto}
+                alt={`Mentor ${session.mentor}`}
+                className={styles.mentorPhoto}
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={styles.noSessions}>No sessions found for the selected filter.</p>
+      )}
     </div>
   );
 };

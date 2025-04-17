@@ -1,6 +1,11 @@
 import React from "react";
 import "./AboutUs.css";
 
+import AdnanImage from "../../assets/mentor1.jpeg";
+import TanishaImage from "../../assets/mentor2.jpeg";
+import AhmedImage from "../../assets/mentor3.jpeg";
+import RaisahImage from "../../assets/mentee1.jpeg";
+
 const AboutUs = () => {
   return (
     <div className="about-us">
@@ -46,38 +51,38 @@ const AboutUs = () => {
         <div className="team-grid">
           <div className="team-member">
             <img
-              src="https://via.placeholder.com/100"
-              alt="John Doe"
+              src={AdnanImage}
+              alt="Adnan Karim"
               className="team-image"
             />
-            <h3>John Doe</h3>
+            <h3>Adnan Karim</h3>
             <p>Co-Founder & CEO</p>
           </div>
           <div className="team-member">
             <img
-              src="https://via.placeholder.com/100"
-              alt="Jane Smith"
+              src={TanishaImage}
+              alt="Tanisha Islam"
               className="team-image"
             />
-            <h3>Jane Smith</h3>
+            <h3>Tanisha Islam</h3>
             <p>Mentorship Coordinator</p>
           </div>
           <div className="team-member">
             <img
-              src="https://via.placeholder.com/100"
-              alt="Michael Lee"
+              src={AhmedImage}
+              alt="Ahmed Ali"
               className="team-image"
             />
-            <h3>Michael Lee</h3>
+            <h3>Ahmed Ali</h3>
             <p>Technical Advisor</p>
           </div>
           <div className="team-member">
             <img
-              src="https://via.placeholder.com/100"
-              alt="Emily Johnson"
+              src={RaisahImage} 
+              alt="Raisah Fatima"
               className="team-image"
             />
-            <h3>Emily Johnson</h3>
+            <h3>Raisah Fatima</h3>
             <p>Community Manager</p>
           </div>
         </div>
@@ -89,13 +94,13 @@ const AboutUs = () => {
           <p>
             "MentorMatrix has completely transformed my career path. The personalized guidance I received was invaluable!"
           </p>
-          <h4>- Sarah Parker</h4>
+          <h4>- Sara Fatima</h4>
         </div>
         <div className="testimonial">
           <p>
             "I found amazing mentors who genuinely care about my growth. Highly recommend this platform!"
           </p>
-          <h4>- David Kumar</h4>
+          <h4>- Amina Khan</h4>
         </div>
       </div>
 

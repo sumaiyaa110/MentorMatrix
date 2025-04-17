@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import './NetworkingEvents.css';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const events = [
   {
     id: 1,
     title: 'Tech Networking Night',
-    date: 'October 30, 2024 19:00:00',
+    date: 'October 30, 2025 19:00:00',
     location: 'Silicon Valley, CA',
     description: 'An evening of networking with tech industry professionals.',
     tags: ['In-Person', 'Tech'],
@@ -25,7 +24,7 @@ const events = [
   {
     id: 3,
     title: 'Industry Panel Discussion',
-    date: 'November 12, 2024 10:00:00',
+    date: 'November 12, 2025 10:00:00',
     location: 'Hybrid (New York / Online)',
     description: 'Learn from industry experts about the latest trends in tech.',
     tags: ['Hybrid', 'Industry'],
@@ -35,7 +34,7 @@ const events = [
   {
     id: 4,
     title: 'Startup Showcase',
-    date: 'December 14, 2024 18:00:00',
+    date: 'December 14, 2025 18:00:00',
     location: 'Tech Park, Seattle',
     description: 'Discover innovative ideas from budding entrepreneurs.',
     tags: ['In-Person', 'Startup'],
@@ -53,7 +52,7 @@ const events = [
   {
     id: 6,
     title: 'Women in Tech Conference',
-    date: 'December 28, 2024 10:00:00',
+    date: 'December 28, 2025 10:00:00',
     location: 'San Francisco, CA',
     description: 'Empowering women in the tech industry to thrive and succeed.',
     tags: ['In-Person', 'Diversity'],
@@ -153,12 +152,22 @@ export default function NetworkingEvents() {
     }
   };
 
-  const filteredEvents = events.filter(
-    (event) =>
-      (searchTerm === '' ||
-        event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        event.location.toLowerCase().includes(searchTerm.toLowerCase())) &&
-      (selectedTags.length === 0 || selectedTags.some((tag) => event.tags.includes(tag)))
+  const filteredEvents = Array.from(
+    new Map(
+      events
+        .filter((event) => {
+          const matchesSearchTerm =
+            searchTerm === '' ||
+            event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            event.location.toLowerCase().includes(searchTerm.toLowerCase());
+
+          const matchesTags =
+            selectedTags.length === 0 || selectedTags.some((tag) => event.tags.includes(tag));
+
+          return matchesSearchTerm && matchesTags;
+        })
+        .map((event) => [event.id, event]) // Map to track unique event IDs
+    ).values()
   );
 
   const sliderSettings = {
@@ -224,10 +233,7 @@ export default function NetworkingEvents() {
 
       <Slider {...sliderSettings}>
         {filteredEvents.map((event) => (
-          <div
-            key={event.id}
-            className={`event-card ${timers[event.id]?.includes('d') ? 'upcoming' : ''}`}
-          >
+          <div key={event.id} className="event-card">
             <div className="event-card-inner">
               <div className="event-card-front">
                 <h2 className="event-title">{event.title}</h2>
@@ -325,4 +331,3 @@ export default function NetworkingEvents() {
     </div>
   );
 }
-

@@ -82,9 +82,12 @@ button.action-btn:hover {
 /* Sessions list container */
 .sessions-list {
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of cards if necessary */
+  gap: 20px; /* Space between session cards */
 }
 
-/* Session card with larger size and hover effect */
+/* Session card with horizontal layout */
 .session-card {
   padding: 20px;
   background: rgba(255, 255, 255, 0.9);
@@ -93,6 +96,7 @@ button.action-btn:hover {
   margin-bottom: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease-in-out;
+  width: calc(33% - 20px); /* Adjust width of each card to fit three per row */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -200,3 +204,4 @@ button:disabled {
 .session-info strong {
   color: #4CAF50;
 }
+

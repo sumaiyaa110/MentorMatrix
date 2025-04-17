@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Feedback.css';
 import { FaStar } from 'react-icons/fa';
 import feedbackImage from '../../assets/customer-rating.png'; // Update the path to your PNG image
@@ -9,6 +10,9 @@ const Feedback = () => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,6 +35,13 @@ const Feedback = () => {
         setRating(0);
         setComment('');
         setSubmitted(true);
+        setShowPopup(true);
+
+        // Hide the popup and redirect after a delay
+        setTimeout(() => {
+          setShowPopup(false);
+          navigate('/dashboard/mentee'); // Replace with the actual path to the mentee's dashboard
+        }, 3000); // 3-second delay
       } else {
         console.error('Failed to submit feedback');
       }
@@ -99,7 +110,11 @@ const Feedback = () => {
           </button>
         </form>
       </div>
-      {submitted && <p className="success-message">Feedback submitted successfully!</p>}
+      {showPopup && (
+        <div className="popup-notification">
+          <p>Feedback submitted successfully!</p>
+        </div>
+      )}
     </div>
   );
 };

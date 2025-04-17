@@ -8,6 +8,7 @@
   min-height: 100vh;
   background: linear-gradient(to right, #f0f4f8, #d9e2ec);
   color: #333;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Topbar */
@@ -16,28 +17,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: #07143F;
+  background-color: #07143f;
   color: #ffffff;
 }
 
-.topbar-left {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-}
-
 .welcome-message {
-  flex: 2;
-  text-align: center;
   font-size: 18px;
   font-weight: bold;
-  color: white;
 }
 
 .topbar-right {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
 }
 
 .logout-button {
@@ -55,6 +46,24 @@
   background-color: #8585f5;
 }
 
+.topbar-bell {
+  position: relative;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+}
+
 /* Dashboard Content */
 .dashboard-content {
   display: flex;
@@ -66,11 +75,10 @@
 .sidebar {
   flex: 0 0 250px;
   background-color: #4e5b6e;
-  color: #fff;
+  color: white;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 100%;
 }
 
 .sidebar h3 {
@@ -78,7 +86,6 @@
   margin-bottom: 1.5rem;
   font-size: 1.4rem;
   text-transform: uppercase;
-  color: #f4f4f4;
 }
 
 .sidebar ul {
@@ -97,8 +104,7 @@
 }
 
 .sidebar ul li:hover {
-  background-color: #07143F;
-  color: #fff;
+  background-color: #07143f;
   transform: scale(1.05);
 }
 
@@ -111,7 +117,7 @@
 /* Main Section */
 .main-section {
   flex: 1;
-  background-color: #fff;
+  background-color: white;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -119,8 +125,7 @@
 
 .main-section h2 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #07143F;
+  color: #07143f;
 }
 
 /* Analytics Cards */
@@ -128,7 +133,6 @@
   background-color: #f9f9f9;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -156,18 +160,98 @@
   transform: translateY(-2px);
 }
 
-/* Tooltip Customization */
-.custom-tooltip {
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  font-size: 0.9rem;
-  color: #333;
+/* Notifications Modal */
+.notifications-modal {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 15px;
 }
 
-/* Chart Container */
-.recharts-wrapper {
-  margin: 0 auto;
-  max-width: 100%;
+.notifications-modal h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.notifications-modal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notifications-modal ul li {
+  margin: 5px 0;
+  padding: 10px;
+  border-left: 4px solid #3498db;
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+.notifications-modal .close-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Priority Styles */
+.notification-item.critical {
+  border-left-color: #e74c3c;
+}
+
+.notification-item.high {
+  border-left-color: #f39c12;
+}
+
+.notification-item.normal {
+  border-left-color: #3498db;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.notification-actions button {
+  padding: 3px 6px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.notification-actions button.approve {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.notification-actions button.approve:hover {
+  background-color: #27ae60;
+}
+
+.notification-actions button.reject {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.notification-actions button.reject:hover {
+  background-color: #c0392b;
+}
+
+.notification-actions button.mark-read {
+  background-color: #3498db;
+  color: white;
+}
+
+.notification-actions button.mark-read:hover {
+  background-color: #2980b9;
 }

@@ -174,10 +174,14 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Testimonials Section */
 .testimonials-section {
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  min-height: 50vh; /* Adjust height to your needs */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 .testimonials-section h2 {
@@ -209,6 +213,7 @@
   color: #34495e;
   font-weight: 600;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

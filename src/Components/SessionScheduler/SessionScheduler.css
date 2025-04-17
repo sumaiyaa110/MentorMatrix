@@ -10,7 +10,7 @@
 }
 
 /* Form container */
-.session-scheduler-form {
+.session-scheduler-container .session-scheduler-form {
   width: 100%;
   max-width: 40rem;
   padding: 2rem;
@@ -21,7 +21,7 @@
 }
 
 /* Heading styling */
-.session-scheduler-form h2 {
+.session-scheduler-container .session-scheduler-form h2 {
   font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -31,7 +31,7 @@
 }
 
 /* Label styling */
-.session-scheduler-form label {
+.session-scheduler-container .session-scheduler-form label {
   display: block;
   font-size: 1rem;
   font-weight: 600;
@@ -40,44 +40,39 @@
 }
 
 /* Calendar and Time Picker */
-.session-scheduler-form .react-calendar,
-.session-scheduler-form .react-time-picker {
+.session-scheduler-container .session-scheduler-form .react-calendar,
+.session-scheduler-container .session-scheduler-form .react-time-picker {
   width: 100%;
-  border: 1px solid #cbd5e1; /* Neutral border */
+  border: 1px solid #cbd5e1;
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-family: Arial, sans-serif;
-  color: #1e293b; /* Text color */
-  background-color: #f8fafc; /* Light background for input areas */
+  color: #1e293b;
+  background-color: #f8fafc;
   margin-bottom: 1rem;
 }
 
 /* Calendar-specific styling */
-.session-scheduler-form .react-calendar__tile {
+.session-scheduler-container .session-scheduler-form .react-calendar__tile {
   border-radius: 0.25rem; /* Rounded tiles */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.session-scheduler-form .react-calendar__tile:enabled:hover,
-.session-scheduler-form .react-calendar__tile:enabled:focus {
+.session-scheduler-container .session-scheduler-form .react-calendar__tile:enabled:hover,
+.session-scheduler-container .session-scheduler-form .react-calendar__tile:enabled:focus {
   background-color: #bae5f4; /* Highlighted background */
   color: #1e293b;
 }
 
-.session-scheduler-form .react-calendar__navigation__label,
-.session-scheduler-form .react-calendar__navigation__arrow {
-  color: #1e293b; /* Neutral color for navigation */
-}
-
 /* Time Picker styling */
-.session-scheduler-form .react-time-picker__inputGroup__input {
+.session-scheduler-container .session-scheduler-form .react-time-picker__inputGroup__input {
   border: none;
   color: #1e293b;
 }
 
 /* Input field styling */
-.session-scheduler-form input[type="text"],
-.session-scheduler-form textarea {
+.session-scheduler-container .session-scheduler-form input[type="text"],
+.session-scheduler-container .session-scheduler-form textarea {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #cbd5e1;
@@ -91,73 +86,73 @@
 }
 
 /* Focus styles for input and textarea */
-.session-scheduler-form input[type="text"]:focus,
-.session-scheduler-form textarea:focus {
-  border-color: #0056b3; /* Highlight border on focus */
+.session-scheduler-container .session-scheduler-form input[type="text"]:focus,
+.session-scheduler-container .session-scheduler-form textarea:focus {
+  border-color: #0056b3;
   outline: none;
 }
 
 /* Description field styling */
-.session-scheduler-form textarea {
-  min-height: 4rem; /* Adjust height for text areas */
-  resize: vertical; /* Allow vertical resizing only */
+.session-scheduler-container .session-scheduler-form textarea {
+  min-height: 4rem;
+  resize: vertical;
 }
 
 /* Button styling */
-.session-scheduler-form button {
+.session-scheduler-container .session-scheduler-form button {
   width: 100%;
   padding: 0.75rem;
   background-color: #bae5f4;
   border: none;
   border-radius: 0.5rem;
-  color: #1e293b; /* Darker button text */
+  color: #1e293b;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.session-scheduler-form button:hover {
+.session-scheduler-container .session-scheduler-form button:hover {
   background-color: #0056b3;
   color: #ffffff;
-  transform: translateY(-2px); /* Lift effect */
+  transform: translateY(-2px);
 }
 
-.session-scheduler-form button:active {
-  transform: translateY(0); /* Reset on click */
+.session-scheduler-container .session-scheduler-form button:active {
+  transform: translateY(0);
 }
 
 /* Success message */
-.session-scheduler-form .success-message {
+.session-scheduler-container .session-scheduler-form .success-message {
   margin-top: 1rem;
   font-size: 1rem;
-  color: #38bdf8; /* Success text color */
+  color: #38bdf8;
   text-align: center;
   font-weight: 600;
 }
 
 /* Selected date display */
-.selected-date {
+.session-scheduler-container .selected-date {
   margin-top: 1rem;
   font-size: 1rem;
   color: #1e293b;
   text-align: center;
-  font-style: italic; /* Add a unique style for emphasis */
+  font-style: italic;
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
-  .session-scheduler-form {
+  .session-scheduler-container .session-scheduler-form {
     padding: 1.5rem;
   }
 
-  .session-scheduler-form h2 {
+  .session-scheduler-container .session-scheduler-form h2 {
     font-size: 1.5rem;
   }
 }
 
-/* Session list styling */
-.scheduled-sessions {
+/* Scheduled Sessions Styling */
+.session-scheduler-container .scheduled-sessions {
   margin-top: 2rem;
   width: 100%;
   max-width: 40rem;
@@ -165,64 +160,100 @@
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevent overflow issues */
 }
 
-.scheduled-sessions h3 {
+/* Section Title */
+.session-scheduler-container .scheduled-sessions h3 {
   font-size: 1.5rem;
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 1rem;
   text-align: center;
+  border-bottom: 2px solid #bae5f4;
+  padding-bottom: 0.5rem;
 }
 
-.scheduled-sessions .session-item {
+/* Session Item Styling */
+.session-scheduler-container .scheduled-sessions .session-item {
   padding: 1rem;
-  border-bottom: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1; /* Subtle separation */
+  background-color: #f8fafc; /* Slight background contrast */
+  border-radius: 0.3rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.scheduled-sessions .session-item:last-child {
+.session-scheduler-container .scheduled-sessions .session-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Hover effect */
+}
+
+/* Last Session Item */
+.session-scheduler-container .scheduled-sessions .session-item:last-child {
   border-bottom: none;
 }
 
-.scheduled-sessions .session-item p {
+/* Text Styling */
+.session-scheduler-container .scheduled-sessions .session-item p {
   margin: 0.5rem 0;
   color: #475569;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
-.scheduled-sessions .session-item p strong {
-  color: #1e293b;
+.session-scheduler-container .scheduled-sessions .session-item p strong {
+  color: #1e293b; /* Emphasized text */
 }
 
-/* Remove button styling */
-.scheduled-sessions .session-item button {
+/* Remove Button Styling */
+.session-scheduler-container .scheduled-sessions .session-item button {
+  display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #e11d48; /* Red background for remove button */
-  color: #ffffff; /* White text */
+  margin-top: 1rem;
+  background-color: #e11d48;
+  color: #ffffff;
   border: none;
-  border-radius: 0.5rem; /* Rounded corners */
-  font-size: 0.875rem; /* Slightly smaller font size */
-  font-weight: 600; /* Bold text */
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.scheduled-sessions .session-item button:hover {
-  background-color: #be123c; /* Darker red on hover */
-  transform: translateY(-1px); /* Slight lift effect */
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+.session-scheduler-container .scheduled-sessions .session-item button:hover {
+  background-color: #be123c;
+  transform: translateY(-1px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Elevated hover */
 }
 
-.scheduled-sessions .session-item button:active {
-  background-color: #9f1239; /* Even darker red on click */
-  transform: translateY(0); /* Reset lift effect on click */
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15); /* Reduced shadow on click */
+.session-scheduler-container .scheduled-sessions .session-item button:active {
+  background-color: #9f1239;
+  transform: translateY(0);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15); /* Active state */
 }
+
+/* No Sessions Message */
+.session-scheduler-container .scheduled-sessions p {
+  font-size: 1rem;
+  color: #475569;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Loading Spinner (Optional) */
+.session-scheduler-container .scheduled-sessions .loading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0056b3;
+  text-align: center;
+  margin-top: 1rem;
+}
+
 /* Error message styling */
-.error-message {
-  color: #e11d48; /* Red for errors */
+.session-scheduler-container .error-message {
+  color: #e11d48;
   font-size: 1rem;
   margin-top: 0.5rem;
   text-align: center;
@@ -230,8 +261,8 @@
 }
 
 /* Success message styling */
-.success-message {
-  color: #38bdf8; /* Blue for success */
+.session-scheduler-container .success-message {
+  color: #38bdf8;
   font-size: 1rem;
   margin-top: 0.5rem;
   text-align: center;
