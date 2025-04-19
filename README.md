@@ -61,5 +61,12 @@ This platform empowers students to explore new fields, receive guidance, and gro
 
 ---
 
+## 📖 Documentation
 
+- [System Architecture](docs/architecture.md)
+- [API Specs](docs/api-specs.md)
+- [Database Schema](docs/MentorMenteeDBSchema.pdf)
+- [Database ER Diagram](docs/MentorMenteeERDiagram.pdf)
+- [User Flow](docs/user-flow.md)
+ 
 
